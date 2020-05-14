@@ -1,0 +1,91 @@
+.toolbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #4b0082;
+  height: 56px;
+  z-index: 200;
+}
+
+.toolbarNavigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  max-width: 85%;
+  margin: auto;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #ee6536;
+  letter-spacing: 3px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.logo a span {
+  color: #ed3833;
+}
+
+.toolbarNavigationItems a {
+  color: #bbb5b5;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Spectral-SemiBold';
+}
+
+.toolbarNavigationItems a:hover,
+.toolbarNavigationItems a:active {
+  color: #ffffff;
+}
+
+.navOption {
+  padding: 10px;
+}
+
+.navOption.active {
+  color: #ffffff;
+}
+
+.toolbarNavigationItems ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.toolbarNavigationItems li {
+  padding: 16px 0.3rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 0;
+}
+
+@media (min-width: 768px) {
+  .toolbarToggleButton {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .toolbarNavigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
+
+  .toolbarNavigationItems {
+    display: none;
+  }
+}
