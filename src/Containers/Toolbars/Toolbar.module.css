@@ -66,6 +66,43 @@
   flex: 1 0;
 }
 
+.ArrowUp {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 17px solid #6a429e;
+  display: none;
+}
+
+.menu:hover .ArrowUp {
+  display: block;
+}
+
+.DropContainer {
+  position: absolute;
+  width: 155px;
+  height: 100px;
+  background-color: #6a429e;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 56px;
+  right: 70px;
+  display: none;
+}
+
+.DropContainer a {
+  color: #000000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menu:hover .DropContainer {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .toolbarToggleButton {
     display: none;
