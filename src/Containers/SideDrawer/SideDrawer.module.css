@@ -1,6 +1,6 @@
 .sideDrawer {
   height: 100%;
-  background: #d53769;
+  background: #4b0082;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 56px;
@@ -10,7 +10,7 @@
   z-index: 101;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
-  border-top: 1px solid #2e3192;
+  border-top: 1px solid #ffffff;
 }
 
 .sideDrawer.open {
@@ -26,7 +26,7 @@
 }
 
 .sideDrawer a {
-  color: #ffffff;
+  color: #bbb5b5;
   text-decoration: none;
   font-size: 1.2rem;
 }
@@ -42,7 +42,7 @@
 
 .sideDrawer a:hover,
 .sideDrawer a:active {
-  color: #fa923f;
+  color: #ffffff;
 }
 
 .navOption {
@@ -50,7 +50,30 @@
 }
 
 .navOption.active {
-  color: #2e3192;
+  color: #ffffff;
+}
+
+.main {
+  border-bottom: 1px solid #ffffff;
+}
+
+.AuthUser {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.authOption {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.authOption a {
+  margin: 40px;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 @media (min-width: 769px) {

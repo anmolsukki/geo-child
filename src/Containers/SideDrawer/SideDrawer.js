@@ -10,6 +10,17 @@ const sideDrawer = (props) => {
 
   return (
     <nav className={drawerClasses}>
+      <div className={SideDrawerClass.main}>
+        <img
+          src="https://img.icons8.com/officel/32/000000/add-user-male.png"
+          alt="icon"
+          className={SideDrawerClass.AuthUser}
+        />
+        <div className={SideDrawerClass.authOption}>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
+        </div>
+      </div>
       <ul>
         {props.navClass.map((item) => {
           return (
