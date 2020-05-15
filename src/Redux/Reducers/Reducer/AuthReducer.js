@@ -6,20 +6,20 @@ const initialState = {
   error: null,
 };
 
-export const UserReducer = (state = initialState, action) => {
+export const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionConstant.GET_USER_DATA_INIT:
+    case actionConstant.LOGIN_DATA_INIT:
       return {
         ...state,
         isLoading: true,
       };
-    case actionConstant.GET_USER_DATA_SUCCESS:
+    case actionConstant.LOGIN_DATA_SUCCESS:
       return {
         ...state,
         reUserData: action.data ? action.data : null,
         isLoading: false,
       };
-    case actionConstant.GET_USER_DATA_ERROR:
+    case actionConstant.LOGIN_DATA_ERROR:
       return {
         ...state,
         error: action.data ? action.data.message : null,

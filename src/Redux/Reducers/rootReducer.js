@@ -1,6 +1,16 @@
 import { combineReducers } from 'redux';
-import { UserReducer } from './Reducer/UserReducer';
+import { AuthReducer } from './Reducer/AuthReducer';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-export default combineReducers({
-  CtrUser: UserReducer,
+const persistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['CtrSignUp'],
+};
+
+const rootReducer = combineReducers({
+  CtrSignUp: AuthReducer,
 });
+
+export default persistReducer(persistConfig, rootReducer);

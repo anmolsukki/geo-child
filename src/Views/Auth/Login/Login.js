@@ -5,6 +5,11 @@ import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import LoginClass from './Login.module.css';
 
 class Login extends Component {
+  state = {
+    email: '',
+    password: '',
+  };
+
   loginHandler = (e) => {
     const inputLength = e.target.value;
     if (inputLength.length > 0) {
@@ -90,7 +95,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userActionData: () => dispatch(actionCreator.UserAction()),
+    LoginActionData: () => dispatch(actionCreator.LoginAction()),
   };
 };
 
