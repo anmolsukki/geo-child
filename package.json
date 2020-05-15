@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "env-cmd": "^10.1.0",
+    "formik": "^2.1.4",
     "loadable-components": "^2.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -16,7 +17,8 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.28.5"
   },
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",

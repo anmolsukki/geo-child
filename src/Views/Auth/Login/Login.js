@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
+import Error from './Error';
 import LoginClass from './Login.module.css';
+
+const ValidationSchema = Yup.object().shape({
+  email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required'),
+  password: Yup.string()
+    .min(6, 'Password must be at least 6 characters')
+    .max(16, 'Too Long!')
+    .required('Required'),
+});
 
 class Login extends Component {
   state = {
     email: '',
     password: '',
-  };
-
-  loginHandler = (e) => {
-    const inputLength = e.target.value;
-    if (inputLength.length > 0) {
-      const nextLength = e.target.nextElementSibling;
-      let addClass = `${LoginClass.unfocusLabel} ${LoginClass.unfocus}`;
-      nextLength.className = addClass;
-    } else {
-      const nextLength = e.target.nextElementSibling;
-      let addClass = `${LoginClass.floatingLabel}`;
-      nextLength.className = addClass;
-    }
   };
 
   render() {
@@ -32,53 +30,87 @@ class Login extends Component {
               <img src="img/bg.svg" alt="" className={LoginClass.bgImage} />
             </div>
           </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5 text-center">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 text-center">
             <img src="img/avatar.svg" alt="" className={LoginClass.avatar} />
             <h2 className={LoginClass.heading}>Welcome</h2>
-            <div className="row">
-              <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
-                <div className={LoginClass.loginFormVertical}>
-                  <div className={LoginClass.loginFormGroup}>
-                    <div className={LoginClass.loginControl}>
-                      <input
-                        type="text"
-                        className={LoginClass.formControl}
-                        name="email"
-                        onChange={(e) => this.loginHandler(e)}
-                      />
-                      <span className={LoginClass.floatingLabel}>Email</span>
+            <Formik
+              initialValues={{ email: '', password: '' }}
+              validationSchema={ValidationSchema}
+              onSubmit={(values, { setSubmitting, resetForm }) => {
+                this.props.LoginActionData(values);
+                setSubmitting(true);
+                resetForm();
+                setSubmitting(false);
+              }}>
+              {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                dirty,
+                isValid,
+              }) => (
+                <form onSubmit={handleSubmit}>
+                  <div className="row">
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                      <div className={LoginClass.loginFormVertical}>
+                        <div className={LoginClass.loginFormGroup}>
+                          <div className={LoginClass.loginControl}>
+                            <input
+                              type="text"
+                              name="email"
+                              className={`${LoginClass.formControl} ${
+                                touched.email && errors.email ? 'has-error' : null
+                              }`}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.email}
+                            />
+                            <span className={LoginClass.floatingLabel}>Email</span>
+                            <Error touched={touched.email} message={errors.email} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <div className={LoginClass.loginFormVertical}>
+                        <div className={LoginClass.loginFormGroup}>
+                          <div className={LoginClass.loginControl}>
+                            <input
+                              type="password"
+                              name="password"
+                              className={`${LoginClass.formControl} ${
+                                touched.email && errors.email ? 'has-error' : null
+                              }`}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.password}
+                            />
+                            <span className={LoginClass.floatingLabel}>Password</span>
+                            <Error touched={touched.password} message={errors.password} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                      <Link to="#" className={LoginClass.btnForgot}>
+                        Forgot Password
+                      </Link>
+                    </div>
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <button
+                        className={`${LoginClass.btnClass} ${LoginClass.btnAnimated}`}
+                        type="submit"
+                        disabled={!dirty || !isValid}>
+                        Login
+                      </button>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div className={LoginClass.loginFormVertical}>
-                  <div className={LoginClass.loginFormGroup}>
-                    <div className={LoginClass.loginControl}>
-                      <input
-                        type="password"
-                        className={LoginClass.formControl}
-                        name="password"
-                        onChange={(e) => this.loginHandler(e)}
-                      />
-                      <span className={LoginClass.floatingLabel}>Password</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
-                <Link to="#" className={LoginClass.btnForgot}>
-                  Forgot Password
-                </Link>
-              </div>
-              <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <Link
-                  to="#"
-                  className={`${LoginClass.btn} ${LoginClass.btnLogin} ${LoginClass.btnAnimated}`}>
-                  Login
-                </Link>
-              </div>
-            </div>
+                </form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>
@@ -95,7 +127,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    LoginActionData: () => dispatch(actionCreator.LoginAction()),
+    LoginActionData: (data) => dispatch(actionCreator.LoginAction(data)),
   };
 };
 

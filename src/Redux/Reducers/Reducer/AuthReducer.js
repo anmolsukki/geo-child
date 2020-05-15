@@ -1,7 +1,7 @@
 import * as actionConstant from '../../Actions/ActionConstant/ActionConstant';
 
 const initialState = {
-  reUserData: [],
+  reUserData: {},
   isLoading: false,
   error: null,
 };

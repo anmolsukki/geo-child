@@ -21,7 +21,7 @@
 
 .loginFormGroup {
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 
 .loginFormGroup {
@@ -53,8 +53,8 @@
   position: absolute;
   pointer-events: none;
   left: 13%;
-  top: 0;
-  color: #000000;
+  top: -20px;
+  color: #4d2582;
   font-size: 15px;
   text-transform: uppercase;
   font-family: 'Spectral-Regular';
@@ -70,78 +70,6 @@
   font-weight: 600;
   letter-spacing: 1px;
   color: #4d2582;
-}
-
-.unfocusLabel {
-  position: absolute;
-  pointer-events: none;
-  left: 13%;
-  top: -20px;
-  text-transform: uppercase;
-  font-family: 'Spectral-MediumItalic';
-  font-size: 16px;
-  transition: 0.5s ease all;
-}
-
-.unfocus {
-  left: 13%;
-  top: -20px;
-  font-size: 15px;
-  font-family: 'Spectral-MediumItalic';
-  opacity: 1;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #4d2582;
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 25px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-  width: 80%;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  color: #ffffff;
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btnLogin {
-  background-color: #4b0082;
-  color: #ffffff;
-}
-
-.btn::after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btnLogin::after {
-  background-color: #4b0082;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 .btnAnimated {
@@ -161,9 +89,35 @@
   }
 }
 
+.btnClass {
+  width: 80%;
+  padding: 8px;
+  color: white;
+  background: #4d2582;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 .btnForgot {
   color: #8bb7f0;
   padding: 0 0 20px;
+}
+
+.formMessage {
+  font-size: 10px;
+  padding-top: 2px;
+}
+
+.formMessage.valid {
+  color: #4caf50;
+  position: absolute;
+  left: 13%;
+}
+
+.formMessage.invalid {
+  color: #f44336;
+  position: absolute;
+  left: 13%;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
