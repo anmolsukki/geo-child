@@ -32,7 +32,7 @@ class Login extends Component {
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 text-center">
             <img src="img/avatar.svg" alt="" className={LoginClass.avatar} />
-            <h2 className={LoginClass.heading}>Welcome</h2>
+            <h2 className={LoginClass.heading}>Login</h2>
             <Formik
               initialValues={{ email: '', password: '' }}
               validationSchema={ValidationSchema}

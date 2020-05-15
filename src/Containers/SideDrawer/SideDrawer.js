@@ -17,8 +17,12 @@ const sideDrawer = (props) => {
           className={SideDrawerClass.AuthUser}
         />
         <div className={SideDrawerClass.authOption}>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link to="/login" onClick={() => props.bacDrawer()}>
+            Login
+          </Link>
+          <Link to="/register" onClick={() => props.bacDrawer()}>
+            Register
+          </Link>
         </div>
       </div>
       <ul>
