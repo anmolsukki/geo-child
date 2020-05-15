@@ -12,3 +12,7 @@
   font-family: 'Spectral-SemiBold';
   src: url('/public/fonts/Spectral-SemiBold.ttf') format('embedded-opentype');
 }
+
+.clr-margin {
+  margin: 0;
+}
