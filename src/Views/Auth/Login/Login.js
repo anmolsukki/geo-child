@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import Error from './Error';
@@ -24,6 +26,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        <ToastContainer limit={1} />
         <div className={LoginClass.bgImage}>
           <div className="row clr-margin">
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
@@ -33,11 +36,9 @@ class Login extends Component {
                 <Formik
                   initialValues={{ email: '', password: '' }}
                   validationSchema={ValidationSchema}
-                  onSubmit={(values, { setSubmitting, resetForm }) => {
+                  onSubmit={(values, { setSubmitting }) => {
                     this.props.LoginActionData(values);
                     setSubmitting(true);
-                    resetForm();
-                    setSubmitting(false);
                   }}>
                   {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>

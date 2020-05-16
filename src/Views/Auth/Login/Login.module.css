@@ -45,7 +45,7 @@
   color: #ffffff;
   outline: none;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   vertical-align: top;
   background-color: transparent;
   box-shadow: none;
@@ -53,6 +53,8 @@
   border-bottom: 1px solid #ffffff;
   transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
   line-height: 25px;
+  font-family: 'fantasy';
+  letter-spacing: 1px;
 }
 
 .formControl:focus {
@@ -91,6 +93,9 @@
   color: #4caf50;
   position: absolute;
   left: 13%;
+  font-weight: bolder;
+  font-size: 13px;
+  letter-spacing: 1px;
   font-family: 'fantasy';
 }
 
@@ -98,6 +103,9 @@
   color: #f44336;
   position: absolute;
   left: 13%;
+  font-weight: bolder;
+  font-size: 13px;
+  letter-spacing: 1px;
   font-family: 'fantasy';
 }
 
