@@ -1,18 +1,3 @@
-@font-face {
-  font-family: 'Spectral-Regular';
-  src: url('/public/fonts/Spectral-Regular.ttf') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: 'Spectral-MediumItalic';
-  src: url('/public/fonts/Spectral-MediumItalic.ttf') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: 'Spectral-SemiBold';
-  src: url('/public/fonts/Spectral-SemiBold.ttf') format('embedded-opentype');
-}
-
 .clr-margin {
   margin: 0;
 }

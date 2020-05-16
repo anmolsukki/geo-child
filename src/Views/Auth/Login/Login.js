@@ -24,93 +24,82 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div className="row clr-margin">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5 text-center">
-            <div>
-              <img src="img/bg.svg" alt="" className={LoginClass.bgImage} />
+        <div className={LoginClass.bgImage}>
+          <div className="row clr-margin">
+            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
+              <div className={LoginClass.formCOntainer}>
+                <img src="img/avatar.svg" alt="" className={LoginClass.avatar} />
+                <h2 className={LoginClass.heading}>Login</h2>
+                <Formik
+                  initialValues={{ email: '', password: '' }}
+                  validationSchema={ValidationSchema}
+                  onSubmit={(values, { setSubmitting, resetForm }) => {
+                    this.props.LoginActionData(values);
+                    setSubmitting(true);
+                    resetForm();
+                    setSubmitting(false);
+                  }}>
+                  {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+                    <form onSubmit={handleSubmit}>
+                      <div className="row">
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                          <div className={LoginClass.loginFormVertical}>
+                            <div className={LoginClass.loginFormGroup}>
+                              <div className={LoginClass.loginControl}>
+                                <input
+                                  type="text"
+                                  name="email"
+                                  className={`${LoginClass.formControl} ${
+                                    touched.email && errors.email ? 'has-error' : null
+                                  }`}
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.email}
+                                />
+                                <span className={LoginClass.floatingLabel}>Email</span>
+                                <Error touched={touched.email} message={errors.email} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                          <div className={LoginClass.loginFormVertical}>
+                            <div className={LoginClass.loginFormGroup}>
+                              <div className={LoginClass.loginControl}>
+                                <input
+                                  type="password"
+                                  name="password"
+                                  className={`${LoginClass.formControl} ${
+                                    touched.email && errors.email ? 'has-error' : null
+                                  }`}
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.password}
+                                />
+                                <span className={LoginClass.floatingLabel}>Password</span>
+                                <Error touched={touched.password} message={errors.password} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                          <Link to="#" className={LoginClass.btnForgot}>
+                            Forgot Password
+                          </Link>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                          <button
+                            className={`${LoginClass.btnClass} ${LoginClass.btnAnimated} ${LoginClass.btn}`}
+                            type="submit">
+                            Login
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  )}
+                </Formik>
+              </div>
             </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 text-center">
-            <img src="img/avatar.svg" alt="" className={LoginClass.avatar} />
-            <h2 className={LoginClass.heading}>Login</h2>
-            <Formik
-              initialValues={{ email: '', password: '' }}
-              validationSchema={ValidationSchema}
-              onSubmit={(values, { setSubmitting, resetForm }) => {
-                this.props.LoginActionData(values);
-                setSubmitting(true);
-                resetForm();
-                setSubmitting(false);
-              }}>
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                dirty,
-                isValid,
-              }) => (
-                <form onSubmit={handleSubmit}>
-                  <div className="row">
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
-                      <div className={LoginClass.loginFormVertical}>
-                        <div className={LoginClass.loginFormGroup}>
-                          <div className={LoginClass.loginControl}>
-                            <input
-                              type="text"
-                              name="email"
-                              className={`${LoginClass.formControl} ${
-                                touched.email && errors.email ? 'has-error' : null
-                              }`}
-                              onChange={handleChange}
-                              onBlur={handleBlur}
-                              value={values.email}
-                            />
-                            <span className={LoginClass.floatingLabel}>Email</span>
-                            <Error touched={touched.email} message={errors.email} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className={LoginClass.loginFormVertical}>
-                        <div className={LoginClass.loginFormGroup}>
-                          <div className={LoginClass.loginControl}>
-                            <input
-                              type="password"
-                              name="password"
-                              className={`${LoginClass.formControl} ${
-                                touched.email && errors.email ? 'has-error' : null
-                              }`}
-                              onChange={handleChange}
-                              onBlur={handleBlur}
-                              value={values.password}
-                            />
-                            <span className={LoginClass.floatingLabel}>Password</span>
-                            <Error touched={touched.password} message={errors.password} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
-                      <Link to="#" className={LoginClass.btnForgot}>
-                        Forgot Password
-                      </Link>
-                    </div>
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                      <button
-                        className={`${LoginClass.btnClass} ${LoginClass.btnAnimated}`}
-                        type="submit"
-                        disabled={!dirty || !isValid}>
-                        Login
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              )}
-            </Formik>
           </div>
         </div>
       </div>

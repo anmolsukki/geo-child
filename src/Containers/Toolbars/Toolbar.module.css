@@ -3,7 +3,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: #4b0082;
+  background: #4d2582;
   height: 56px;
   z-index: 200;
 }
@@ -33,7 +33,7 @@
   color: #bbb5b5;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Spectral-SemiBold';
+  font-family: 'fantasy';
 }
 
 .toolbarNavigationItems a:hover,
