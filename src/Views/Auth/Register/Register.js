@@ -30,7 +30,7 @@ class Register extends Component {
     return (
       <div>
         <ToastContainer limit={1} />
-        <div className={AuthClass.bgImage}>
+        <div className={AuthClass.bgImageRegister}>
           <div className="row clr-margin">
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
               <div className={AuthClass.formCOntainer}>

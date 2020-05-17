@@ -1,5 +1,14 @@
-.bgImage {
+.bgImageLogin {
   background-image: url('/img/login-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.bgImageRegister {
+  background-image: url('/img/register-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
