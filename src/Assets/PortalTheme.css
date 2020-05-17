@@ -1,7 +1,3 @@
-.clr-margin {
-  margin: 0;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -22,4 +18,20 @@ input:-webkit-autofill:active {
 
 .Toastify__toast--success {
   background: #4d2582 !important;
+}
+
+.swal-icon--success__line {
+  background-color: #2e134e !important;
+}
+
+.swal-button {
+  background-color: #2e134e !important;
+}
+
+.swal-icon--success__ring {
+  border: 4px solid hsl(267, 61%, 19%) !important;
+}
+
+.clr-margin {
+  margin: 0;
 }

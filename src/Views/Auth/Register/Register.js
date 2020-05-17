@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer } from 'react-toastify';
@@ -10,16 +9,20 @@ import Error from './Error';
 import AuthClass from '../Login.module.css';
 
 const ValidationSchema = Yup.object().shape({
+  name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
   email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required'),
+  mobile: Yup.string().min(10, 'Too Short!').max(10, 'Too Long!').required('Required'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .max(16, 'Too Long!')
     .required('Required'),
 });
 
-class Login extends Component {
+class Register extends Component {
   state = {
+    name: '',
     email: '',
+    mobile: '',
     password: '',
   };
 
@@ -32,18 +35,38 @@ class Login extends Component {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
               <div className={AuthClass.formCOntainer}>
                 <img src="img/avatar.svg" alt="" className={AuthClass.avatar} />
-                <h2 className={AuthClass.heading}>Login</h2>
+                <h2 className={AuthClass.heading}>Register</h2>
                 <Formik
-                  initialValues={{ email: '', password: '' }}
+                  initialValues={{ name: '', email: '', mobile: '', password: '' }}
                   validationSchema={ValidationSchema}
                   onSubmit={(values, { setSubmitting }) => {
-                    this.props.LoginActionData(values);
+                    this.props.registerActionData(values);
                     setSubmitting(true);
                   }}>
                   {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                          <div className={AuthClass.loginFormVertical}>
+                            <div className={AuthClass.loginFormGroup}>
+                              <div className={AuthClass.loginControl}>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  className={`${AuthClass.formControl} ${
+                                    touched.name && errors.name ? 'has-error' : null
+                                  }`}
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.name}
+                                />
+                                <span className={AuthClass.floatingLabel}>Name</span>
+                                <Error touched={touched.name} message={errors.name} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                           <div className={AuthClass.loginFormVertical}>
                             <div className={AuthClass.loginFormGroup}>
                               <div className={AuthClass.loginControl}>
@@ -68,10 +91,30 @@ class Login extends Component {
                             <div className={AuthClass.loginFormGroup}>
                               <div className={AuthClass.loginControl}>
                                 <input
+                                  type="text"
+                                  name="mobile"
+                                  className={`${AuthClass.formControl} ${
+                                    touched.mobile && errors.mobile ? 'has-error' : null
+                                  }`}
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.mobile}
+                                />
+                                <span className={AuthClass.floatingLabel}>Mobile</span>
+                                <Error touched={touched.mobile} message={errors.mobile} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                          <div className={AuthClass.loginFormVertical}>
+                            <div className={AuthClass.loginFormGroup}>
+                              <div className={AuthClass.loginControl}>
+                                <input
                                   type="password"
                                   name="password"
                                   className={`${AuthClass.formControl} ${
-                                    touched.email && errors.email ? 'has-error' : null
+                                    touched.password && errors.password ? 'has-error' : null
                                   }`}
                                   onChange={handleChange}
                                   onBlur={handleBlur}
@@ -83,16 +126,11 @@ class Login extends Component {
                             </div>
                           </div>
                         </div>
-                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
-                          <Link to="#" className={AuthClass.btnForgot}>
-                            Forgot Password
-                          </Link>
-                        </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                           <button
                             className={`${AuthClass.btnClass} ${AuthClass.btnAnimated} ${AuthClass.btn}`}
                             type="submit">
-                            Login
+                            Register
                           </button>
                         </div>
                       </div>
@@ -114,8 +152,8 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    LoginActionData: (data) => dispatch(actionCreator.LoginAction(data)),
+    registerActionData: (data) => dispatch(actionCreator.RegisterAction(data)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

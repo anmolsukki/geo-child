@@ -161,6 +161,27 @@
     padding: 25px;
     margin: 0 5px;
   }
+
+  .loginFormVertical {
+    width: 100%;
+    margin: auto;
+  }
+
+  .loginFormVertical .floatingLabel {
+    left: 20px;
+  }
+
+  .formControl:focus ~ .floatingLabel {
+    left: 20px;
+  }
+
+  .formMessage.valid {
+    left: 20px;
+  }
+
+  .formMessage.invalid {
+    left: 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
