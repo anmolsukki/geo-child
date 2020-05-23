@@ -56,8 +56,7 @@
   z-index: 3;
   color: #ffffff;
   opacity: 1;
-  position: absolute;
-  bottom: 0;
+  transform: translateY(30px);
   transition: 0.5s all;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.67), rgb(77, 37, 130));
   width: 100%;
