@@ -13,3 +13,10 @@ export const REG_SUCCESS = (data) => ({
   data: data,
 });
 export const REG_ERROR = (data) => ({ type: actionConstant.REGISTER_ERROR, data: data });
+
+export const MAGAZINE_INIT = () => ({ type: actionConstant.MAGAZINE_DATA_INIT });
+export const MAGAZINE_SUCCESS = (data) => ({
+  type: actionConstant.MAGAZINE_DATA_SUCCESS,
+  data: data,
+});
+export const MAGAZINE_ERROR = (data) => ({ type: actionConstant.MAGAZINE_DATA_ERROR, data: data });

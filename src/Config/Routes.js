@@ -1,8 +1,8 @@
 import React from 'react';
 import DefaultLayout from '../Containers';
 
-const Home = React.lazy(() => import('../Views/Home'));
-const About = React.lazy(() => import('../Views/About'));
+const Home = React.lazy(() => import('../Views/Home/Home'));
+const About = React.lazy(() => import('../Views/About/About'));
 const Contact = React.lazy(() => import('../Views/Contact'));
 const Magazines = React.lazy(() => import('../Views/Magazines'));
 const Login = React.lazy(() => import('../Views/Auth/Login/Login'));

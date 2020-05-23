@@ -1,0 +1,41 @@
+.aboutPage .heading {
+  color: #1c2e3d;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'fantasy';
+  margin-bottom: 0;
+}
+
+.aboutPage .description {
+  width: 100%;
+  color: #1c2e3d;
+  font-size: 18px;
+  font-family: 'fantasy';
+  line-height: 1.4;
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+.aboutPage .thnaksQuotes {
+  float: right;
+  margin: 25px;
+  font-weight: 600;
+  font-style: italic;
+  border-bottom: 1px solid #000000;
+}
+
+.clr {
+  clear: both;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .aboutPage .description {
+    font-size: 16px;
+  }
+
+  .aboutPage .thnaksQuotes {
+    float: unset;
+    margin: 25px 0;
+    font-size: 14px;
+  }
+}

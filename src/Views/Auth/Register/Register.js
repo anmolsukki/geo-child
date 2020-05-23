@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import Error from './Error';
-import AuthClass from '../Login.module.css';
+import AuthClass from '../Auth.module.css';
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
@@ -28,7 +28,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div className="fadeInEffect">
         <ToastContainer limit={1} />
         <div className={AuthClass.bgImageRegister}>
           <div className="row clr-margin">
@@ -47,8 +47,8 @@ class Register extends Component {
                     <form onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
-                          <div className={AuthClass.loginFormVertical}>
-                            <div className={AuthClass.loginFormGroup}>
+                          <div className={AuthClass.AuthFormVertical}>
+                            <div className={AuthClass.authFormGroup}>
                               <div className={AuthClass.loginControl}>
                                 <input
                                   type="text"
@@ -67,8 +67,8 @@ class Register extends Component {
                           </div>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                          <div className={AuthClass.loginFormVertical}>
-                            <div className={AuthClass.loginFormGroup}>
+                          <div className={AuthClass.AuthFormVertical}>
+                            <div className={AuthClass.authFormGroup}>
                               <div className={AuthClass.loginControl}>
                                 <input
                                   type="text"
@@ -87,8 +87,8 @@ class Register extends Component {
                           </div>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                          <div className={AuthClass.loginFormVertical}>
-                            <div className={AuthClass.loginFormGroup}>
+                          <div className={AuthClass.AuthFormVertical}>
+                            <div className={AuthClass.authFormGroup}>
                               <div className={AuthClass.loginControl}>
                                 <input
                                   type="text"
@@ -107,8 +107,8 @@ class Register extends Component {
                           </div>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                          <div className={AuthClass.loginFormVertical}>
-                            <div className={AuthClass.loginFormGroup}>
+                          <div className={AuthClass.AuthFormVertical}>
+                            <div className={AuthClass.authFormGroup}>
                               <div className={AuthClass.loginControl}>
                                 <input
                                   type="password"

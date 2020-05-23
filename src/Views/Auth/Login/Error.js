@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthClass from '../Login.module.css';
+import AuthClass from '../Auth.module.css';
 
 const Error = ({ touched, message }) => {
   if (!touched) {
