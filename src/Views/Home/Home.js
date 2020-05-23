@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
 import Loader from '../../Utils/Loader';
@@ -27,19 +28,24 @@ class Home extends Component {
     }
     return (
       <div className="fadeInEffect">
-        <div className="container-fluid">
+        <div className={HomeClass.homeWidth}>
           <div className="row clr-margin">
             {documentStateData.reMagzineData.map((data) => {
               return (
-                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 mt-3" key={data._id}>
-                  <div className={HomeClass.hvrbox}>
+                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
+                  <div className={HomeClass.itemCard}>
                     <img
                       src={`https://geochild.herokuapp.com/api/v1/magzine/get-cover/${data.coverImages[0]}`}
-                      alt={data.name}
-                      className={`img-thumbnail ${HomeClass.itemImg}`}
+                      alt=""
+                      className="img-fluid"
                     />
-                    <div className={`${HomeClass.hvrboxLayerTop} ${HomeClass.hvrboxLayerScale}`}>
-                      <div className={HomeClass.hvrboxText}>{data.name}</div>
+                    <div className={HomeClass.itemInfo}>
+                      <h1 className={HomeClass.cardHeading}>{data.name}</h1>
+                      <Link
+                        to="#"
+                        className={`${HomeClass.btn} ${HomeClass.btnWhite} ${HomeClass.btnAnimated}`}>
+                        Read More
+                      </Link>
                     </div>
                   </div>
                 </div>
