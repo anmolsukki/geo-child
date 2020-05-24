@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.itemDetailWidth {
+  width: 90%;
+  margin: auto;
+}
+
 .itemCard {
   width: 100%;
   background: #e6e5e5;
@@ -187,4 +192,10 @@
 
 .descPoint li {
   list-style: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .itemDetailWidth {
+    width: 95%;
+  }
 }

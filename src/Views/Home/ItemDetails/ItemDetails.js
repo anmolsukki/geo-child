@@ -27,9 +27,9 @@ class ItemDetails extends Component {
     const itemDetails = documentStateData.reMagzineData.magzine;
     return (
       <div className="fadeInEffect">
-        <div className="container">
+        <div className={DetailClass.itemDetailWidth}>
           <div className="row clr-margin">
-            <div className="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 my-5">
+            <div className="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 my-5">
               <div className={DetailClass.itemCard}>
                 <div className={DetailClass.topSection}>
                   <img
@@ -57,12 +57,12 @@ class ItemDetails extends Component {
                       onClick={() =>
                         this.imageChangeHandler(
                           `${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${
-                            itemDetails && itemDetails.coverImages[0]
+                            itemDetails && itemDetails.coverImages[1]
                           }`
                         )
                       }
                       src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${
-                        itemDetails && itemDetails.coverImages[0]
+                        itemDetails && itemDetails.coverImages[1]
                       }`}
                       alt=""
                     />
@@ -80,7 +80,7 @@ class ItemDetails extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-xl-7 col-lg-6 col-md-6 col-sm-6 col-12 my-5">
+            <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12 my-5">
               <div className={DetailClass.description}>
                 <h1>{itemDetails && itemDetails.name}</h1>
                 <div>
