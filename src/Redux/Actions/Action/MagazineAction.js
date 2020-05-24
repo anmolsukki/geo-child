@@ -2,8 +2,13 @@ import axios from 'axios';
 import * as actionTypes from '../ActionTypes/ActonTypes';
 import { getHeaders } from '../Header/AuthHeader';
 
-export const AllMagaZineAction = (page) => {
-  let url = `${process.env.REACT_APP_BASE_URL}/magzine?page=${page}&limit=10`;
+export const AllMagaZineAction = (data) => {
+  let url;
+  if (data.id === undefined) {
+    url = `${process.env.REACT_APP_BASE_URL}/magzine?page=${data}&limit=100`;
+  } else {
+    url = `${process.env.REACT_APP_BASE_URL}/magzine/${data.id}`;
+  }
   return async (dispatch) => {
     dispatch(actionTypes.MAGAZINE_INIT());
     return axios

@@ -19,7 +19,7 @@ const navbar = (props) => {
         </div>
         <div className={ToolbarClass.logo} onClick={myFunction}>
           <Link to="/home">
-            <span>Geo&nbsp;</span>Child
+            <span>Geo</span>Child
           </Link>
         </div>
         <div className={ToolbarClass.spacer} />

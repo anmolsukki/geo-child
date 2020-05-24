@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
-import Loader from '../../Utils/Loader';
+import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
+import Loader from '../../../Utils/Loader';
 import HomeClass from './Home.module.css';
 
 class Home extends Component {
@@ -35,14 +35,14 @@ class Home extends Component {
                 <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
                   <div className={HomeClass.itemCard}>
                     <img
-                      src={`https://geochild.herokuapp.com/api/v1/magzine/get-cover/${data.coverImages[0]}`}
+                      src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
                       alt=""
                       className="img-fluid"
                     />
                     <div className={HomeClass.itemInfo}>
                       <h1 className={HomeClass.cardHeading}>{data.name}</h1>
                       <Link
-                        to="#"
+                        to={{ pathname: `/home/${data._id}` }}
                         className={`${HomeClass.btn} ${HomeClass.btnWhite} ${HomeClass.btnAnimated}`}>
                         Read More
                       </Link>
