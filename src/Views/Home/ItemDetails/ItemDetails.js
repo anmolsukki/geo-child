@@ -11,7 +11,6 @@ class ItemDetails extends Component {
   };
 
   imageChangeHandler = (image) => {
-    console.log('sfgddgdfg', image);
     var container = document.getElementById(`${DetailClass.imageContainer}`);
     container.src = image;
   };
@@ -29,7 +28,8 @@ class ItemDetails extends Component {
       <div className="fadeInEffect">
         <div className={DetailClass.itemDetailWidth}>
           <div className="row clr-margin">
-            <div className="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 my-5">
+            <div
+              className={`col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ${DetailClass.itemMargin}`}>
               <div className={DetailClass.itemCard}>
                 <div className={DetailClass.topSection}>
                   <img
@@ -72,15 +72,14 @@ class ItemDetails extends Component {
 
                 <div className={DetailClass.productInfo}>
                   <div className={DetailClass.name}>{itemDetails && itemDetails.name}</div>
-                  <Link
-                    to="#"
-                    className={`${DetailClass.btn} ${DetailClass.btnWhite} ${DetailClass.btnAnimated}`}>
+                  <Link to="#" className={`${DetailClass.btn} ${DetailClass.btnAnimated}`}>
                     Buy Now
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12 my-5">
+            <div
+              className={`col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ${DetailClass.itemMargin}`}>
               <div className={DetailClass.description}>
                 <h1>{itemDetails && itemDetails.name}</h1>
                 <div>

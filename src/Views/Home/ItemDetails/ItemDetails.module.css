@@ -50,7 +50,7 @@
   color: #4d2582;
   font-size: 24px;
   background: white;
-  padding: 10px;
+  padding: 0 10px;
   border-radius: 5px;
 }
 
@@ -79,38 +79,12 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   color: #ffffff;
+  text-decoration: none;
 }
 
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btnWhite {
-  background-color: #4d2582;
-  color: #ffffff;
-}
-
-.btn::after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btnWhite::after {
-  background-color: #4d2582;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 .btnAnimated {
@@ -197,5 +171,9 @@
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .itemDetailWidth {
     width: 95%;
+  }
+
+  .itemMargin {
+    margin: 25px 0 !important;
   }
 }
