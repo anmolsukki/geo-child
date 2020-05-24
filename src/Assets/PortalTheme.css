@@ -91,3 +91,50 @@ input:-webkit-autofill:active {
     opacity: 1;
   }
 }
+
+.card-title {
+  font-family: 'Crimson Text';
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.card-img-top {
+  max-height: 300px;
+}
+
+.btn-primary {
+  background-color: #e951a0;
+  border-color: #e951a0;
+}
+
+.texOverflow {
+  max-height: 50px;
+  overflow: hidden;
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.imgClipPath {
+  clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
+}
+
+.btn-style {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.75px;
+}
+
+.btn-style:hover {
+  background-color: #88315e;
+  border-color: #88315e;
+}
+
+/* .imgClipPath:hover {
+  display: inline-block;
+  margin: 0 0.1rem;
+  animation: animate__fadeIn;
+  animation-duration: 2s;
+  transform: scaleX(1.5);
+} */

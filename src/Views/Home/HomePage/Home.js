@@ -33,17 +33,18 @@ class Home extends Component {
             {documentStateData.reMagzineData.map((data) => {
               return (
                 <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
-                  <div className={HomeClass.itemCard}>
+                  <div className="card">
                     <img
+                      className="card-img-top animate__animated animate__fadeIn imgClipPath"
                       src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
                       alt=""
-                      className="img-fluid"
                     />
-                    <div className={HomeClass.itemInfo}>
-                      <h1 className={HomeClass.cardHeading}>{data.name}</h1>
+                    <div className="card-body">
+                      <h5 className="card-title">{data.name}</h5>
+                      <p className="card-text texOverflow">{data.description}</p>
                       <Link
                         to={{ pathname: `/home/${data._id}` }}
-                        className={`${HomeClass.btn} ${HomeClass.btnWhite} ${HomeClass.btnAnimated}`}>
+                        className="btn btn-primary btn-style">
                         Read More
                       </Link>
                     </div>
