@@ -10,11 +10,11 @@ import Error from './Error';
 import AuthClass from '../Auth.module.css';
 
 const ValidationSchema = Yup.object().shape({
-  email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required'),
+  email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required*'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .max(16, 'Too Long!')
-    .required('Required'),
+    .required('Required*'),
 });
 
 class Login extends Component {

@@ -9,13 +9,13 @@ import Error from './Error';
 import AuthClass from '../Auth.module.css';
 
 const ValidationSchema = Yup.object().shape({
-  name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required'),
-  mobile: Yup.string().min(10, 'Too Short!').max(10, 'Too Long!').required('Required'),
+  name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required*'),
+  email: Yup.string().email('Must be an email address').max(255, 'Too Long!').required('Required*'),
+  mobile: Yup.string().min(10, 'Too Short!').max(10, 'Too Long!').required('Required*'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .max(16, 'Too Long!')
-    .required('Required'),
+    .required('Required*'),
 });
 
 class Register extends Component {
