@@ -40,11 +40,11 @@ class Home extends Component {
                       alt=""
                     />
                     <div className="card-body">
-                      <h5 className="card-title">{data.name}</h5>
+                      <h5 className="card-title titleStyle">{data.name}</h5>
                       <p className="card-text texOverflow">{data.description}</p>
                       <Link
                         to={{ pathname: `/home/${data._id}` }}
-                        className="btn btn-primary btn-style">
+                        className="btn btn-primary btnStyle">
                         Read More
                       </Link>
                     </div>

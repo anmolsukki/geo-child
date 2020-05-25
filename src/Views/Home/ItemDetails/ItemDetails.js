@@ -31,13 +31,14 @@ class ItemDetails extends Component {
               return (
                 <React.Fragment key={data._id}>
                   <div
-                    className={`col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ${DetailClass.itemMargin}`}>
+                    className={`col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 my-5 fadeInEffectLeft ${DetailClass.itemMargin}`}>
                     <div className={DetailClass.itemCard}>
                       <div className={DetailClass.topSection}>
                         <img
                           id={DetailClass.imageContainer}
                           src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
                           alt=""
+                          className="fadeInEffectImage"
                         />
                         <div className={DetailClass.selectImage}>
                           <img
@@ -71,7 +72,7 @@ class ItemDetails extends Component {
                     </div>
                   </div>
                   <div
-                    className={`col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ${DetailClass.itemMargin}`}>
+                    className={`col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 my-5 fadeInEffectRight ${DetailClass.itemMargin}`}>
                     <div className={DetailClass.description}>
                       <h1>{data.name}</h1>
                       <div>
@@ -84,7 +85,7 @@ class ItemDetails extends Component {
                       <div className={DetailClass.prices}>
                         <div className={DetailClass.pricesTag}>{`₹${data.price}`}</div>
                       </div>
-                      <div>
+                      <div className={DetailClass.descrptionDetail}>
                         <p>{data.description}</p>
                       </div>
                       <div className={DetailClass.descPoint}>

@@ -19,7 +19,8 @@ const navbar = (props) => {
         </div>
         <div className={ToolbarClass.logo} onClick={myFunction}>
           <Link to="/home">
-            <span>Geo</span>Child
+            <span>GeoChild</span>
+            <p className={ToolbarClass.brand}>India's first child rights magazine</p>
           </Link>
         </div>
         <div className={ToolbarClass.spacer} />

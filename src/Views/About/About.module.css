@@ -2,18 +2,18 @@
   color: #1c2e3d;
   font-size: 25px;
   font-weight: 600;
-  font-family: 'fantasy';
+  font-family: 'Teko', sans-serif;
   margin-bottom: 0;
 }
 
 .aboutPage .description {
   width: 100%;
   color: #1c2e3d;
-  font-size: 18px;
-  font-family: 'fantasy';
-  line-height: 1.4;
   text-align: justify;
-  margin-bottom: 5px;
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .aboutPage .thnaksQuotes {
@@ -22,6 +22,7 @@
   font-weight: 600;
   font-style: italic;
   border-bottom: 1px solid #000000;
+  font-family: 'Teko', sans-serif;
 }
 
 .clr {

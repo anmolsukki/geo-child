@@ -44,6 +44,30 @@ input:-webkit-autofill:active {
   -ms-animation: fadeIn ease 2s;
 }
 
+.fadeInEffectLeft {
+  animation: fadeInLeft ease 5s;
+  -webkit-animation: fadeInLeft ease 5s;
+  -moz-animation: fadeInLeft ease 5s;
+  -o-animation: fadeInLeft ease 5s;
+  -ms-animation: fadeInLeft ease 5s;
+}
+
+.fadeInEffectRight {
+  animation: fadeInRight ease 5s;
+  -webkit-animation: fadeInRight ease 5s;
+  -moz-animation: fadeInRight ease 5s;
+  -o-animation: fadeInRight ease 5s;
+  -ms-animation: fadeInRight ease 5s;
+}
+
+.fadeInEffectImage:hover {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -92,19 +116,15 @@ input:-webkit-autofill:active {
   }
 }
 
-.card-title {
-  font-family: 'Crimson Text';
-  font-weight: 600;
-  font-size: 1.75rem;
-}
-
-.card-img-top {
+.imgClipPath {
+  clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
   max-height: 300px;
 }
 
-.btn-primary {
-  background-color: #e951a0;
-  border-color: #e951a0;
+.titleStyle {
+  font-family: 'Crimson Text';
+  font-weight: 600;
+  font-size: 1.75rem;
 }
 
 .texOverflow {
@@ -116,17 +136,15 @@ input:-webkit-autofill:active {
   font-size: 1.2rem;
 }
 
-.imgClipPath {
-  clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
-}
-
-.btn-style {
+.btnStyle {
   font-family: 'Teko', sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.75px;
+  background-color: #e951a0;
+  border-color: #e951a0;
 }
 
-.btn-style:hover {
+.btnStyle:hover {
   background-color: #88315e;
   border-color: #88315e;
 }
@@ -138,3 +156,70 @@ input:-webkit-autofill:active {
   animation-duration: 2s;
   transform: scaleX(1.5);
 } */
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-10px);
+    -moz-transform: translatex(-10px);
+    -o-transform: translatex(-10px);
+    transform: translatex(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+@-moz-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-10px);
+    -moz-transform: translatex(-10px);
+    -o-transform: translatex(-10px);
+    transform: translatex(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-100px);
+    -moz-transform: translatex(-100px);
+    -o-transform: translatex(-100px);
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+.in-left {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-duration: 1s;
+  animation-delay: 1s;
+}
