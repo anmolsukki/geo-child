@@ -28,22 +28,22 @@ function Footer() {
               <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
               <ul className="footer_ul_amrc">
                 <li>
-                  <a href="http://webenlance.com">Image Rectoucing</a>
+                  <a href="//webenlance.com">Image Rectoucing</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Clipping Path</a>
+                  <a href="//webenlance.com">Clipping Path</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Hollow Man Montage</a>
+                  <a href="//webenlance.com">Hollow Man Montage</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Ebay & Amazon</a>
+                  <a href="//webenlance.com">Ebay & Amazon</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Hair Masking/Clipping</a>
+                  <a href="//webenlance.com">Hair Masking/Clipping</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Image Cropping</a>
+                  <a href="//webenlance.com">Image Cropping</a>
                 </li>
               </ul>
             </div>
@@ -52,22 +52,22 @@ function Footer() {
               <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
               <ul className="footer_ul_amrc">
                 <li>
-                  <a href="http://webenlance.com">Remove Background</a>
+                  <a href="//webenlance.com">Remove Background</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Shadows & Mirror Reflection</a>
+                  <a href="//webenlance.com">Shadows & Mirror Reflection</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Logo Design</a>
+                  <a href="//webenlance.com">Logo Design</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Vectorization</a>
+                  <a href="//webenlance.com">Vectorization</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Hair Masking/Clipping</a>
+                  <a href="//webenlance.com">Hair Masking/Clipping</a>
                 </li>
                 <li>
-                  <a href="http://webenlance.com">Image Cropping</a>
+                  <a href="//webenlance.com">Image Cropping</a>
                 </li>
               </ul>
             </div>
@@ -111,22 +111,22 @@ function Footer() {
         <div className="container">
           <ul className="foote_bottom_ul_amrc">
             <li>
-              <a href="http://webenlance.com">Home</a>
+              <a href="//webenlance.com">Home</a>
             </li>
             <li>
-              <a href="http://webenlance.com">About</a>
+              <a href="//webenlance.com">About</a>
             </li>
             <li>
-              <a href="http://webenlance.com">Services</a>
+              <a href="//webenlance.com">Services</a>
             </li>
             <li>
-              <a href="http://webenlance.com">Pricing</a>
+              <a href="//webenlance.com">Pricing</a>
             </li>
             <li>
-              <a href="http://webenlance.com">Blog</a>
+              <a href="//webenlance.com">Blog</a>
             </li>
             <li>
-              <a href="http://webenlance.com">Contact</a>
+              <a href="//webenlance.com">Contact</a>
             </li>
           </ul>
           <p className="text-center">
@@ -135,22 +135,22 @@ function Footer() {
 
           <ul className="social_footer_ul">
             <li>
-              <a href="http://webenlance.com">
+              <a href="//webenlance.com">
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="http://webenlance.com">
+              <a href="//webenlance.com">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="http://webenlance.com">
+              <a href="//webenlance.com">
                 <i className="fab fa-linkedin"></i>
               </a>
             </li>
             <li>
-              <a href="http://webenlance.com">
+              <a href="//webenlance.com">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
