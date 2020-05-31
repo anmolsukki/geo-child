@@ -11,19 +11,21 @@ const sideDrawer = (props) => {
   return (
     <nav className={drawerClasses}>
       <div className={SideDrawerClass.main}>
-        <img
-          src="https://img.icons8.com/officel/32/000000/add-user-male.png"
-          alt="icon"
-          className={SideDrawerClass.AuthUser}
-        />
-        <div className={SideDrawerClass.authOption}>
-          <Link to="/login" onClick={() => props.bacDrawer()}>
-            Login
-          </Link>
-          <Link to="/register" onClick={() => props.bacDrawer()}>
-            Register
-          </Link>
-        </div>
+        <img src="img/user.svg" alt="icon" className={SideDrawerClass.AuthUser} />
+        {localStorage.getItem('token') ? (
+          <div className={SideDrawerClass.authOption}>
+            <Link to="#">{localStorage.getItem('name')}</Link>
+          </div>
+        ) : (
+          <div className={SideDrawerClass.authOption}>
+            <Link to="/login" onClick={() => props.bacDrawer()}>
+              Login
+            </Link>
+            <Link to="/register" onClick={() => props.bacDrawer()}>
+              Register
+            </Link>
+          </div>
+        )}
       </div>
       <ul>
         {props.navClass.map((item) => {
@@ -31,15 +33,23 @@ const sideDrawer = (props) => {
             <li key={item.link}>
               <Link
                 to={item.link}
-                className={`${SideDrawerClass.navOption} ${
-                  item.isSelected === true ? SideDrawerClass.active : ''
-                }`}
-                onClick={() => props.bacDrawer() && props.addClass(item)}>
+                className={`${SideDrawerClass.navOption}`}
+                onClick={() => props.bacDrawer()}>
                 {item.title}
               </Link>
             </li>
           );
         })}
+        {localStorage.getItem('token') ? (
+          <li>
+            <Link
+              to="#"
+              className={`${SideDrawerClass.navOption}`}
+              onClick={() => props.bacDrawer() && props.logout()}>
+              Logout
+            </Link>
+          </li>
+        ) : null}
       </ul>
     </nav>
   );

@@ -54,10 +54,6 @@
   padding: 10px;
 }
 
-.navOption.active {
-  color: #ffffff;
-}
-
 .toolbarNavigationItems ul {
   list-style: none;
   margin: 0;

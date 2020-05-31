@@ -13,17 +13,14 @@ class Main extends React.Component {
     navData: [
       {
         title: 'About',
-        isSelected: this.props.location.pathname === '/about' ? true : false,
         link: '/about',
       },
       {
         title: 'Contact',
-        isSelected: this.props.location.pathname === '/contact' ? true : false,
         link: '/contact',
       },
       {
         title: 'Magazines',
-        isSelected: this.props.location.pathname === '/magazine' ? true : false,
         link: '/magazine',
       },
     ],
@@ -43,14 +40,10 @@ class Main extends React.Component {
     });
   };
 
-  handleClick = async (index) => {
-    let navData = JSON.parse(JSON.stringify(this.state.navData));
-    for (let i in navData) {
-      if (navData[i].link === index.link) {
-        navData[i].isSelected = true;
-      } else navData[i].isSelected = false;
-    }
-    await this.setState({ navData });
+  logoutHandler = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    this.props.history.push('/home');
   };
 
   render() {
@@ -63,13 +56,13 @@ class Main extends React.Component {
         <Navbar
           drawerClickHandler={this.drawerToggleClickHandler}
           navClass={this.state.navData}
-          addClass={this.handleClick}
+          logout={this.logoutHandler}
         />
         <SideDrawer
           show={this.state.sideDrawerOpen}
           bacDrawer={this.drawerToggleClickHandler}
           navClass={this.state.navData}
-          addClass={this.handleClick}
+          logout={this.logoutHandler}
         />
         {backdrop}
         <main>

@@ -11,11 +11,6 @@ const navbar = (props) => {
     }
   };
 
-  const logoutHandler = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-  };
-
   return (
     <header className={ToolbarClass.toolbar}>
       <nav className={ToolbarClass.toolbarNavigation}>
@@ -34,12 +29,7 @@ const navbar = (props) => {
             {props.navClass.map((item) => {
               return (
                 <li key={item.link}>
-                  <Link
-                    to={item.link}
-                    className={`${ToolbarClass.navOption} ${
-                      item.isSelected === true ? ToolbarClass.active : ''
-                    }`}
-                    onClick={() => props.addClass(item)}>
+                  <Link to={item.link} className={`${ToolbarClass.navOption}`}>
                     {item.title}
                   </Link>
                 </li>
@@ -52,7 +42,7 @@ const navbar = (props) => {
                 {localStorage.getItem('token') ? (
                   <div className={ToolbarClass.DropContainer}>
                     <Link to="#">{localStorage.getItem('name')}</Link>
-                    <Link to="#" onClick={logoutHandler}>
+                    <Link to="#" onClick={() => props.logout()}>
                       Logout
                     </Link>
                   </div>

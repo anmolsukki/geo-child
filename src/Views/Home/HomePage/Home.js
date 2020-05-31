@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import Loader from '../../../Utils/Loader';
+import Footer from '../../Footer/Footer';
 
 class Home extends Component {
   state = {
@@ -64,7 +65,9 @@ class Home extends Component {
           <div className="row clr-margin">
             {documentStateData.reMagzineData.map((data) => {
               return (
-                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
+                <div
+                  className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4 cardSpace"
+                  key={data._id}>
                   <div className="card">
                     <img
                       className="card-img-top imgClipPath"
@@ -87,6 +90,7 @@ class Home extends Component {
             })}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

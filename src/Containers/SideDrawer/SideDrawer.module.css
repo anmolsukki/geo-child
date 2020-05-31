@@ -1,6 +1,6 @@
 .sideDrawer {
   height: 100%;
-  background: #4b0082;
+  background: #44aee4;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 56px;
@@ -26,9 +26,10 @@
 }
 
 .sideDrawer a {
-  color: #bbb5b5;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.2rem;
+  font-family: 'Teko', sans-serif;
 }
 
 .sideDrawer li {
@@ -37,20 +38,11 @@
   font-size: 20px;
   cursor: pointer;
   font-weight: 600;
-  border-bottom: 1px solid #ced4da;
-}
-
-.sideDrawer a:hover,
-.sideDrawer a:active {
-  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .navOption {
   padding: 10px;
-}
-
-.navOption.active {
-  color: #ffffff;
 }
 
 .main {
@@ -63,6 +55,7 @@
   margin-right: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+  width: 70px;
 }
 
 .authOption {
@@ -72,7 +65,7 @@
 
 .authOption a {
   margin: 40px;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 800;
 }
 

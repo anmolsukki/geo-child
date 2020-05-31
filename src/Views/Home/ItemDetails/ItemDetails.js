@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import Loader from '../../../Utils/Loader';
-import DetailClass from './ItemDetails.module.css';
+import Footer from '../../Footer/Footer';
 
 class ItemDetails extends Component {
   componentDidMount = () => {
@@ -11,7 +11,7 @@ class ItemDetails extends Component {
   };
 
   imageChangeHandler = (image) => {
-    var container = document.getElementById(`${DetailClass.imageContainer}`);
+    var container = document.getElementById('imageContainer');
     container.src = image;
   };
 
@@ -20,113 +20,121 @@ class ItemDetails extends Component {
     if (documentStateData.isLoading) {
       return <Loader />;
     } else if (documentStateData.error) {
-      return <div className={DetailClass.ErrMessage}>ERROR: {documentStateData.error}</div>;
+      return <div className="ErrMessage">ERROR: {documentStateData.error}</div>;
     }
 
     return (
       <div className="fadeInEffect">
-        <div className="container">
-          <div className="row clr-margin">
-            {documentStateData.reMagzineData.map((data) => {
-              return (
-                <React.Fragment key={data._id}>
-                  <div
-                    className={`col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 my-5 fadeInEffectLeft ${DetailClass.itemMargin}`}>
-                    <div className={DetailClass.itemCard}>
-                      <div className={DetailClass.topSection}>
-                        <img
-                          id={DetailClass.imageContainer}
-                          src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
-                          alt=""
-                          className="fadeInEffectImage"
-                        />
-                        <div className={DetailClass.selectImage}>
-                          <img
-                            onClick={() =>
-                              this.imageChangeHandler(
-                                `${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`
-                              )
-                            }
-                            src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
-                            alt=""
-                          />
-                          <img
-                            onClick={() =>
-                              this.imageChangeHandler(
-                                `${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[1]}`
-                              )
-                            }
-                            src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[1]}`}
-                            alt=""
-                          />
+        <section className="first">
+          <div className="container">
+            <div className="col-md-10 col-12 mx-auto detailSpace">
+              <div className="card detail-card">
+                <div className="row clr-margin">
+                  {documentStateData.reMagzineData.map((data) => {
+                    return (
+                      <React.Fragment key={data._id}>
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 itemMargin">
+                          <div className="row">
+                            <div className="col-md-3 col-sm-3 col-3">
+                              <div className="selectImage">
+                                <img
+                                  src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
+                                  alt=""
+                                  onClick={() =>
+                                    this.imageChangeHandler(
+                                      `${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`
+                                    )
+                                  }
+                                />
+                                <img
+                                  src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[1]}`}
+                                  alt=""
+                                  onClick={() =>
+                                    this.imageChangeHandler(
+                                      `${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[1]}`
+                                    )
+                                  }
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-9 col-sm-9 col-9">
+                              <div className="itemCard">
+                                <div className="topSection">
+                                  <img
+                                    id="imageContainer"
+                                    src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
+                                    alt=""
+                                  />
+                                  <div className="price">{`₹${data.price}`}</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className={DetailClass.price}>{`₹${data.price}`}</div>
-                      </div>
-
-                      <div className={DetailClass.productInfo}>
-                        <div className={DetailClass.name}>{data.name}</div>
-                        <Link to="#" className="btn btn-primary btnStyle buyBtn">
-                          Read More
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={`col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 my-5 fadeInEffectRight ${DetailClass.itemMargin}`}>
-                    <div className={DetailClass.description}>
-                      <h1>{data.name}</h1>
-                      <div>
-                        <span className={DetailClass.badge}>{data.tags}</span>
-                        <span className={DetailClass.language}>{data.language}</span>
-                      </div>
-                      <div className={DetailClass.specialPrices}>
-                        <span>Special price</span>
-                      </div>
-                      <div className={DetailClass.prices}>
-                        <div className={DetailClass.pricesTag}>{`₹${data.price}`}</div>
-                      </div>
-                      <div className={DetailClass.descrptionDetail}>
-                        <p>{data.description}</p>
-                      </div>
-                      <div className={DetailClass.descPoint}>
-                        <div className={DetailClass.pointsLine}>
-                          <img
-                            src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90"
-                            alt=""
-                            width="18"
-                            height="18"
-                            className={DetailClass.pointImage}
-                          />
-                          <li>{data.frequency}</li>
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5">
+                          <div className="description">
+                            <h1>{data.name}</h1>
+                            <div>
+                              <span className="badge">{data.tags}</span>
+                              <span className="language">{data.language}</span>
+                            </div>
+                            <div className="specialPrices">
+                              <span>Special price</span>
+                            </div>
+                            <div className="prices">
+                              <div className="pricesTag">{`₹${data.price}`}</div>
+                            </div>
+                            <div className="descrptionDetail">
+                              <p>{data.description}</p>
+                            </div>
+                            <div className="descPoint">
+                              <div className="pointsLine">
+                                <img
+                                  src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90"
+                                  alt=""
+                                  width="18"
+                                  height="18"
+                                  className="pointImage"
+                                />
+                                <li>{data.frequency}</li>
+                              </div>
+                              <div className="pointsLine">
+                                <img
+                                  src="https://img.icons8.com/cute-clipart/64/000000/time-span.png"
+                                  alt=""
+                                  width="18"
+                                  height="18"
+                                  className="pointImage"
+                                />
+                                <li>{data.month}</li>
+                              </div>
+                              <div className="pointsLine">
+                                <img
+                                  src="https://img.icons8.com/color/48/000000/shuttlecraft-type-9.png"
+                                  alt=""
+                                  width="18"
+                                  height="18"
+                                  className="pointImage"
+                                />
+                                <li>{data.type}</li>
+                              </div>
+                            </div>
+                            <div className="productInfo">
+                              <Link to="#" className="btn btn-primary btnStyle buyBtn">
+                                Buy Now!
+                              </Link>
+                            </div>
+                          </div>
                         </div>
-                        <div className={DetailClass.pointsLine}>
-                          <img
-                            src="https://img.icons8.com/cute-clipart/64/000000/time-span.png"
-                            alt=""
-                            width="18"
-                            height="18"
-                            className={DetailClass.pointImage}
-                          />
-                          <li>{data.month}</li>
-                        </div>
-                        <div className={DetailClass.pointsLine}>
-                          <img
-                            src="https://img.icons8.com/color/48/000000/shuttlecraft-type-9.png"
-                            alt=""
-                            width="18"
-                            height="18"
-                            className={DetailClass.pointImage}
-                          />
-                          <li>{data.type}</li>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </React.Fragment>
-              );
-            })}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        <Footer />
       </div>
     );
   }
