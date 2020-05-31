@@ -39,7 +39,7 @@ class Home extends Component {
                 <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
               </div>
               <div className="carousel-item">
-                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+                <img className="d-block img-fluid" src="img/slider2.jpg" alt="" />
               </div>
               <div className="carousel-item">
                 <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
@@ -60,6 +60,7 @@ class Home extends Component {
           </div>
         </section>
         <div className="pageWidth">
+          <h3 className="mainHeader">Our Magazines</h3>
           <div className="row clr-margin">
             {documentStateData.reMagzineData.map((data) => {
               return (
@@ -72,6 +73,7 @@ class Home extends Component {
                     />
                     <div className="card-body home-card">
                       <h5 className="card-title titleStyle">{data.name}</h5>
+                      <p className="magMonth">{data.month}</p>
                       <p className="card-text texOverflow">{data.description}</p>
                       <Link
                         to={{ pathname: `/home/${data._id}` }}

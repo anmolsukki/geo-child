@@ -25,7 +25,7 @@ class ItemDetails extends Component {
 
     return (
       <div className="fadeInEffect">
-        <div className={DetailClass.itemDetailWidth}>
+        <div className="container">
           <div className="row clr-margin">
             {documentStateData.reMagzineData.map((data) => {
               return (
@@ -65,8 +65,8 @@ class ItemDetails extends Component {
 
                       <div className={DetailClass.productInfo}>
                         <div className={DetailClass.name}>{data.name}</div>
-                        <Link to="#" className={`${DetailClass.btn} ${DetailClass.btnAnimated}`}>
-                          Buy Now
+                        <Link to="#" className="btn btn-primary btnStyle buyBtn">
+                          Read More
                         </Link>
                       </div>
                     </div>

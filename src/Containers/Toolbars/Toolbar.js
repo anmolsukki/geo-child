@@ -47,7 +47,7 @@ const navbar = (props) => {
             })}
             <li>
               <aside className={ToolbarClass.menu}>
-                <img src="https://img.icons8.com/officel/22/000000/add-user-male.png" alt="" />
+                <img src="img/user.svg" alt="" style={{ width: '30px' }} />
                 <div className={ToolbarClass.ArrowUp}></div>
                 {localStorage.getItem('token') ? (
                   <div className={ToolbarClass.DropContainer}>

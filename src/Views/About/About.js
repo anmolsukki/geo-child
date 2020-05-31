@@ -190,7 +190,7 @@ class About extends React.Component {
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-6">
-                    <div className="our-team active">
+                    <div className="our-team">
                       <div className="pic">
                         <img
                           src="https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"
@@ -216,7 +216,7 @@ class About extends React.Component {
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-6">
-                    <div className="our-team active">
+                    <div className="our-team">
                       <div className="pic">
                         <img
                           src="https://images.pexels.com/photos/157646/title-photo-logo-shirt-157646.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"

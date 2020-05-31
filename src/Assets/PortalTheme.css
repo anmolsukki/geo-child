@@ -42,7 +42,7 @@ input:-webkit-autofill:active {
 }
 
 .pageWidth {
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
@@ -121,13 +121,20 @@ input:-webkit-autofill:active {
   background-color: #777777;
 }
 
+.mainHeader {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  font-size: 2.7rem;
+}
+
 .imgClipPath {
   clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
   max-height: 300px;
 }
 
 .home-card {
-  background: #ffcc28;
+  background: #44aee4f5;
 }
 
 .card-title {
@@ -137,18 +144,28 @@ input:-webkit-autofill:active {
 }
 
 .titleStyle {
-  font-family: 'Crimson Text';
+  font-family: 'Teko', sans-serif;
   font-weight: 600;
   font-size: 1.75rem;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.magMonth {
+  color: #ffffff;
+  font-size: 16px;
+  float: right;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .texOverflow {
   max-height: 50px;
   overflow: hidden;
-  font-family: 'Crimson Text';
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .btnStyle {
@@ -160,8 +177,9 @@ input:-webkit-autofill:active {
 }
 
 .btnStyle:hover {
-  background-color: #88315e;
-  border-color: #88315e;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
 }
 
 /* About Page */
@@ -189,7 +207,7 @@ input:-webkit-autofill:active {
 }
 
 .card-header {
-  background: #ea5e9e;
+  background: #44aee4;
 }
 
 .card-header ul li a {
@@ -284,7 +302,7 @@ input:-webkit-autofill:active {
   width: 40px;
   line-height: 40px;
   border-radius: 0;
-  background-color: #ea5e9e;
+  background-color: #44aee4;
   margin-right: 5px;
   transition: all 0.5s ease 0s;
   position: relative;
@@ -300,6 +318,11 @@ input:-webkit-autofill:active {
   font-weight: 600;
   font-family: 'Teko', sans-serif;
   border-bottom: 1px solid #000;
+}
+
+/* ItemDetail */
+.buyBtn {
+  width: 100%;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
