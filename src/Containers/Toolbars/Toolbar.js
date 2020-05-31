@@ -11,6 +11,11 @@ const navbar = (props) => {
     }
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+  };
+
   return (
     <header className={ToolbarClass.toolbar}>
       <nav className={ToolbarClass.toolbarNavigation}>
@@ -44,10 +49,19 @@ const navbar = (props) => {
               <aside className={ToolbarClass.menu}>
                 <img src="https://img.icons8.com/officel/22/000000/add-user-male.png" alt="" />
                 <div className={ToolbarClass.ArrowUp}></div>
-                <div className={ToolbarClass.DropContainer}>
-                  <Link to="/login">Login</Link>
-                  <Link to="/register">Register</Link>
-                </div>
+                {localStorage.getItem('token') ? (
+                  <div className={ToolbarClass.DropContainer}>
+                    <Link to="#">{localStorage.getItem('name')}</Link>
+                    <Link to="#" onClick={logoutHandler}>
+                      Logout
+                    </Link>
+                  </div>
+                ) : (
+                  <div className={ToolbarClass.DropContainer}>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                  </div>
+                )}
               </aside>
             </li>
           </ul>

@@ -16,6 +16,7 @@ export const LoginAction = (data) => {
         dispatch(actionTypes.LOGIN_SUCCESS(res.data));
         if (res.status === 200) {
           localStorage.setItem('token', res.data.data.token);
+          localStorage.setItem('name', res.data.data.name);
           history.push(`/home`);
         }
       })

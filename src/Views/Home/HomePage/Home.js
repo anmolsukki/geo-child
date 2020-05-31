@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
 import Loader from '../../../Utils/Loader';
-import HomeClass from './Home.module.css';
 
 class Home extends Component {
   state = {
@@ -24,22 +23,54 @@ class Home extends Component {
     if (documentStateData.isLoading) {
       return <Loader />;
     } else if (documentStateData.error) {
-      return <div className={HomeClass.ErrMessage}>ERROR: {documentStateData.error}</div>;
+      return <div className="ErrMessage">ERROR: {documentStateData.error}</div>;
     }
     return (
       <div className="fadeInEffect">
-        <div className={HomeClass.homeWidth}>
+        <section className="Carousel">
+          <div className="carousel slide" id="main-carousel" data-ride="carousel">
+            <ol className="carousel-indicators">
+              <li data-target="#main-carousel" data-slide-to="0" className="active"></li>
+              <li data-target="#main-carousel" data-slide-to="1"></li>
+              <li data-target="#main-carousel" data-slide-to="2"></li>
+            </ol>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+              </div>
+              <div className="carousel-item">
+                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+              </div>
+              <div className="carousel-item">
+                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+              </div>
+            </div>
+            <a href="#main-carousel" className="carousel-control-prev" data-slide="prev">
+              <span className="carousel-control-prev-icon"></span>
+              <span className="sr-only" aria-hidden="true">
+                Prev
+              </span>
+            </a>
+            <a href="#main-carousel" className="carousel-control-next" data-slide="next">
+              <span className="carousel-control-next-icon"></span>
+              <span className="sr-only" aria-hidden="true">
+                Next
+              </span>
+            </a>
+          </div>
+        </section>
+        <div className="pageWidth">
           <div className="row clr-margin">
             {documentStateData.reMagzineData.map((data) => {
               return (
                 <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
                   <div className="card">
                     <img
-                      className="card-img-top animate__animated animate__fadeIn imgClipPath"
+                      className="card-img-top imgClipPath"
                       src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
                       alt=""
                     />
-                    <div className="card-body">
+                    <div className="card-body home-card">
                       <h5 className="card-title titleStyle">{data.name}</h5>
                       <p className="card-text texOverflow">{data.description}</p>
                       <Link
