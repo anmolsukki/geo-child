@@ -3,8 +3,8 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: #44aee4;
-  height: 56px;
+  background: #ffffff;
+  height: 100px;
   z-index: 200;
 }
 
@@ -17,41 +17,23 @@
   margin: auto;
 }
 
-.logo a {
-  text-decoration: none;
-  color: #ffffff;
-  letter-spacing: 3px;
-  font-size: 34px;
-  font-weight: bolder;
-  font-family: 'Teko', sans-serif;
-  line-height: 10px;
+.logo a img {
+  width: 185px;
 }
 
-.logo a span {
-  color: #ffffff;
-}
-
-.brand {
-  font-size: 16px;
-  letter-spacing: 0;
-  margin: 0;
+.navImage {
+  display: block;
+  width: 50px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 .toolbarNavigationItems a {
-  color: #ffffff;
+  color: #ed2024;
   text-decoration: none;
   font-size: 21px;
-  letter-spacing: 1px;
   font-family: 'Teko', sans-serif;
-}
-
-.toolbarNavigationItems a:hover,
-.toolbarNavigationItems a:active {
-  color: #ffffff;
-}
-
-.navOption {
-  padding: 10px;
 }
 
 .toolbarNavigationItems ul {
@@ -62,14 +44,11 @@
 }
 
 .toolbarNavigationItems li {
-  padding: 12.5px 0.3rem;
+  padding: 12.5px 1.25rem;
   font-size: 16px;
   font-weight: 600;
-}
-
-.toolbarNavigationItems li:hover {
-  background-color: #378cb7;
-  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .spacer {

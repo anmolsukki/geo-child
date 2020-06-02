@@ -29,6 +29,7 @@ class Home extends Component {
     return (
       <div className="fadeInEffect">
         <section className="Carousel">
+          <div className="sliderCircle"></div>
           <div className="carousel slide" id="main-carousel" data-ride="carousel">
             <ol className="carousel-indicators">
               <li data-target="#main-carousel" data-slide-to="0" className="active"></li>
@@ -37,13 +38,13 @@ class Home extends Component {
             </ol>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+                <img className="d-block img-fluid" src="img/slider1.png" alt="" />
               </div>
               <div className="carousel-item">
                 <img className="d-block img-fluid" src="img/slider2.jpg" alt="" />
               </div>
               <div className="carousel-item">
-                <img className="d-block img-fluid" src="img/slider1.jpg" alt="" />
+                <img className="d-block img-fluid" src="img/slider3.jpg" alt="" />
               </div>
             </div>
             <a href="#main-carousel" className="carousel-control-prev" data-slide="prev">

@@ -14,14 +14,22 @@ class Main extends React.Component {
       {
         title: 'About',
         link: '/about',
+        img: 'img/team.svg',
       },
       {
         title: 'Contact',
         link: '/contact',
+        img: 'img/contact.svg',
       },
       {
         title: 'Magazines',
         link: '/magazine',
+        img: 'img/magazine.svg',
+      },
+      {
+        title: 'Team',
+        link: '/team',
+        img: 'img/team.svg',
       },
     ],
   };

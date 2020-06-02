@@ -4,23 +4,15 @@ import DrawerToggleButton from '../DrawerToggle/DrawerToggleButton';
 import ToolbarClass from './Toolbar.module.css';
 
 const navbar = (props) => {
-  const myFunction = () => {
-    var element = document.getElementsByClassName(ToolbarClass.active);
-    if (element.length) {
-      element[0].classList.remove(ToolbarClass.active);
-    }
-  };
-
   return (
     <header className={ToolbarClass.toolbar}>
       <nav className={ToolbarClass.toolbarNavigation}>
         <div className={ToolbarClass.toolbarToggleButton}>
           <DrawerToggleButton click={props.drawerClickHandler} />
         </div>
-        <div className={ToolbarClass.logo} onClick={myFunction}>
+        <div className={ToolbarClass.logo}>
           <Link to="/home">
-            <span>GeoChild</span>
-            <p className={ToolbarClass.brand}>India's first child rights magazine</p>
+            <img src="img/logo.svg" alt="" />
           </Link>
         </div>
         <div className={ToolbarClass.spacer} />
@@ -28,16 +20,20 @@ const navbar = (props) => {
           <ul>
             {props.navClass.map((item) => {
               return (
-                <li key={item.link}>
-                  <Link to={item.link} className={`${ToolbarClass.navOption}`}>
-                    {item.title}
+                <li key={item.link} className={ToolbarClass.menuBar}>
+                  <Link to={item.link}>
+                    <img src={item.img} alt="" className={ToolbarClass.navImage} />
                   </Link>
+                  <Link to={item.link}>{item.title}</Link>
                 </li>
               );
             })}
-            <li>
+            <li className={ToolbarClass.menuBar}>
               <aside className={ToolbarClass.menu}>
-                <img src="img/user.svg" alt="" style={{ width: '30px' }} />
+                <Link to="#">
+                  <img src="img/user.svg" alt="" className={ToolbarClass.navImage} />
+                </Link>
+                <Link to="#">User</Link>
                 <div className={ToolbarClass.ArrowUp}></div>
                 {localStorage.getItem('token') ? (
                   <div className={ToolbarClass.DropContainer}>
