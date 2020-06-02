@@ -21,6 +21,20 @@ class Login extends Component {
   state = {
     email: '',
     password: '',
+    forgotEmail: '',
+  };
+
+  forgotHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  submitFogot = () => {
+    const data = {
+      email: this.state.forgotEmail,
+    };
+    this.props.forgotActionData(data);
   };
 
   render() {
@@ -84,7 +98,11 @@ class Login extends Component {
                           </div>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
-                          <Link to="#" className={AuthClass.btnForgot}>
+                          <Link
+                            to="#"
+                            className={AuthClass.btnForgot}
+                            data-toggle="modal"
+                            data-target="#form">
                             Forgot Password
                           </Link>
                         </div>
@@ -103,6 +121,45 @@ class Login extends Component {
             </div>
           </div>
         </div>
+        <div
+          className="modal fade"
+          id="form"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header border-bottom-0">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Forgot Password
+                </h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="form-group">
+                  <label htmlFor="email1">Email address</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email1"
+                    name="forgotEmail"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    onChange={this.forgotHandler}
+                  />
+                </div>
+              </div>
+              <div className="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="submit" className="btn btn-success" onClick={this.submitFogot}>
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -115,6 +172,7 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch) => {
   return {
     LoginActionData: (data) => dispatch(actionCreator.LoginAction(data)),
+    forgotActionData: (data) => dispatch(actionCreator.ForgotAction(data)),
   };
 };
 

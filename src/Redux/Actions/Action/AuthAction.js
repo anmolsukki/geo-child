@@ -63,3 +63,36 @@ export const RegisterAction = (data) => {
       });
   };
 };
+
+export const ForgotAction = (data) => {
+  let url = `${process.env.REACT_APP_BASE_URL}/customer/forgot-password`;
+  return async (dispatch) => {
+    dispatch(actionTypes.FORGOT_INIT());
+    return axios
+      .post(url, data, { headers: await getHeaders(false) })
+      .then((res) => {
+        console.log(res, 'Forgot Success');
+        dispatch(actionTypes.FORGOT_SUCCESS(res.data));
+        if (res.status === 200) {
+          swal({
+            title: 'Mail Sent, Please Check!',
+            icon: 'success',
+            dangerMode: false,
+            button: 'OK',
+          }).then((result) => {
+            if (result) {
+              window.location.reload();
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error, 'Forgot Error');
+        dispatch(actionTypes.FORGOT_ERROR(error));
+        toast.success(error.response.data.message, {
+          autoClose: 1000,
+          transition: Flip,
+        });
+      });
+  };
+};

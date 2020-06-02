@@ -3,6 +3,7 @@ import * as actionConstant from '../../Actions/ActionConstant/ActionConstant';
 const initialState = {
   reLoginData: {},
   reRegisterData: {},
+  reForgotData: [],
   isLoading: false,
   error: null,
 };
@@ -39,6 +40,24 @@ export const AuthReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case actionConstant.REGISTER_ERROR:
+      return {
+        ...state,
+        error: action.data ? action.data.message : null,
+        isLoading: false,
+      };
+
+    case actionConstant.FORGOT_PASSWORD_INIT:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionConstant.FORGOT_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        reForgotData: action.data ? action.data : null,
+        isLoading: false,
+      };
+    case actionConstant.FORGOT_PASSWORD_ERROR:
       return {
         ...state,
         error: action.data ? action.data.message : null,

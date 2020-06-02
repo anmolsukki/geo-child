@@ -15,6 +15,14 @@ class ItemDetails extends Component {
     container.src = image;
   };
 
+  buyMagazine = (price) => {
+    const data = {
+      amount: price,
+      magzineId: this.props.match.params.id,
+    };
+    this.props.buyMagazineActionData(data);
+  };
+
   render() {
     const { documentStateData } = this.props;
     if (documentStateData.isLoading) {
@@ -120,7 +128,10 @@ class ItemDetails extends Component {
                               </div>
                             </div>
                             <div className="productInfo">
-                              <Link to="#" className="btn btn-primary btnStyle buyBtn">
+                              <Link
+                                to="#"
+                                className="btn btn-primary btnStyle buyBtn"
+                                onClick={() => this.buyMagazine(data.price)}>
                                 Buy Now!
                               </Link>
                             </div>
@@ -150,6 +161,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     AllMagaZineActionData: (id) => dispatch(actionCreator.AllMagaZineAction(id)),
+    buyMagazineActionData: (data) => dispatch(actionCreator.buyMagazineAction(data)),
   };
 };
 

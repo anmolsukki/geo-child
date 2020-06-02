@@ -12,7 +12,7 @@ export const AllMagaZineAction = (data) => {
   return async (dispatch) => {
     dispatch(actionTypes.MAGAZINE_INIT());
     return axios
-      .get(url, { headers: await getHeaders(true) })
+      .get(url, { headers: await getHeaders(false) })
       .then((res) => {
         console.log(res, 'Get Magazine Success');
         dispatch(actionTypes.MAGAZINE_SUCCESS(res.data.data));
