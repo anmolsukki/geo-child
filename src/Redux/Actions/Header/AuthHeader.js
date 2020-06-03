@@ -2,6 +2,7 @@ export const getHeaders = (isAuth = false) => {
   if (isAuth) {
     return {
       'Content-Type': 'application/json',
+      'X-Requested-With': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
   }
