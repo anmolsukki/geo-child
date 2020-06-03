@@ -8,5 +8,6 @@ export const getHeaders = (isAuth = false) => {
   }
   return {
     'Content-Type': 'application/json',
+    'X-Requested-With': 'application/json',
   };
 };
