@@ -76,9 +76,9 @@ class Home extends Component {
                       alt=""
                     />
                     <div className="card-body home-card">
-                      <h5 className="card-title titleStyle">{data.name}</h5>
+                      <h5 className="card-title magazinetitle">{data.name}</h5>
                       <p className="magMonth">{data.month}</p>
-                      <p className="card-text texOverflow">{data.description}</p>
+                      <p className="card-text texDesciption">{data.description}</p>
                       <Link
                         to={{ pathname: `/home/${data._id}` }}
                         className="btn btn-primary btnStyle">

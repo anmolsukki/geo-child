@@ -4,7 +4,7 @@ import DefaultLayout from '../Containers';
 const Home = React.lazy(() => import('../Views/Home/Home'));
 const ItemDetails = React.lazy(() => import('../Views/ItemDetails/ItemDetails'));
 const About = React.lazy(() => import('../Views/About/About'));
-const Contact = React.lazy(() => import('../Views/Contact'));
+const Contact = React.lazy(() => import('../Views/Contact/Contact'));
 const Team = React.lazy(() => import('../Views/Team/Team'));
 const Magazines = React.lazy(() => import('../Views/Magazines'));
 const Login = React.lazy(() => import('../Views/Auth/Login/Login'));

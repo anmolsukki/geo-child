@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div>
+      <div className="banner about-img">
+        <img src="img/grass.png" alt="" />
+      </div>
       <footer className="footer">
         <div className="container bottom_border">
           <div className="row">
