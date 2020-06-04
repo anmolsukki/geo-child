@@ -609,6 +609,10 @@ footer p {
   text-align: center;
 }
 
+.copyright {
+  color: #ed2227;
+}
+
 /* Our Team */
 
 .our_team {

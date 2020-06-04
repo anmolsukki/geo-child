@@ -19,7 +19,7 @@ class Main extends React.Component {
       {
         title: 'Contact',
         link: '/contact',
-        img: 'img/contact.svg',
+        img: 'img/navContact.svg',
       },
       {
         title: 'Team',

@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
 import Loader from '../../Utils/Loader';
 import Footer from '../Footer/Footer';
 
 class ItemDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orderID: '',
+    };
+  }
+
   componentDidMount = () => {
     this.props.AllMagaZineActionData({ id: this.props.match.params.id });
   };
@@ -15,16 +22,73 @@ class ItemDetails extends Component {
     container.src = image;
   };
 
-  buyMagazine = (price) => {
-    const data = {
-      amount: price,
-      magzineId: this.props.match.params.id,
+  RequestOrderPayment = () => {
+    let magzineId = this.props.documentStateData.reMagzineData[0]._id;
+    let ammunt = this.props.documentStateData.reMagzineData[0].price;
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    myHeaders.append('Content-Type', 'application/json');
+
+    var raw = JSON.stringify({ magzineId });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
     };
-    this.props.buyMagazineActionData(data);
+
+    fetch('http://3.15.224.93:5050/api/v1/buy', requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        this.setState({
+          orderID: result.data.order_id,
+        });
+        var options = {
+          key_id: 'rzp_test_DB15Tgu6YWUNcJ',
+          amount: ammunt,
+          currency: 'INR',
+          name: 'Geochild',
+          description: 'Pay to Geochild',
+          order_id: this.state.orderID,
+          handler: function (response) {
+            let data = { ...response };
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener('readystatechange', function () {
+              if (this.readyState === 4) {
+              }
+            });
+            xhr.open('POST', 'http://3.15.224.93:5050/api/v1/buy/make-payment');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`);
+            xhr.setRequestHeader('userId', '{{USERID}}');
+            xhr.send(JSON.stringify(data));
+          },
+          prefill: {
+            name: 'Rupesh',
+            email: 'rupesh.kumar@hsc.com',
+            contact: '8860979460',
+          },
+          notes: {
+            address: '',
+          },
+          theme: {
+            color: '#F37254',
+          },
+        };
+        var rzp1 = new window.Razorpay(options);
+        rzp1.open();
+      })
+      .catch((err) => {
+        console.log('bcbcb======>>>>', err.message);
+      });
   };
 
   render() {
     const { documentStateData } = this.props;
+    console.log('fgbfb', documentStateData);
+
     if (documentStateData.isLoading) {
       return <Loader />;
     } else if (documentStateData.error) {
@@ -128,12 +192,15 @@ class ItemDetails extends Component {
                               </div>
                             </div>
                             <div className="productInfo">
-                              <Link
+                              {/* <Link
                                 to="#"
                                 className="btn btn-primary btnStyle buyBtn"
                                 onClick={() => this.buyMagazine(data.price)}>
                                 Buy Now!
-                              </Link>
+                              </Link> */}
+                              <button id="rzp-button1" onClick={() => this.RequestOrderPayment()}>
+                                Pay
+                              </button>
                             </div>
                           </div>
                         </div>
