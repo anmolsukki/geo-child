@@ -33,7 +33,7 @@ const navbar = (props) => {
                 <Link to="#">
                   <img src="img/user.svg" alt="" className={ToolbarClass.navImage} />
                 </Link>
-                <Link to="#">User</Link>
+                <Link to="#">Profile</Link>
                 <div className={ToolbarClass.ArrowUp}></div>
                 {localStorage.getItem('token') ? (
                   <div className={ToolbarClass.DropContainer}>

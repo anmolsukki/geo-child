@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actionCreator from '../../../Redux/Actions/ActionTypes/index';
-import Loader from '../../../Utils/Loader';
-import Footer from '../../Footer/Footer';
+import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
+import Loader from '../../Utils/Loader';
+import Footer from '../Footer/Footer';
 
 class ItemDetails extends Component {
   componentDidMount = () => {
