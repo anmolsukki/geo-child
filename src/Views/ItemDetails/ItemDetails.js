@@ -192,15 +192,16 @@ class ItemDetails extends Component {
                               </div>
                             </div>
                             <div className="productInfo">
-                              {/* <Link
+                              <button
                                 to="#"
+                                id="rzp-button1"
                                 className="btn btn-primary btnStyle buyBtn"
-                                onClick={() => this.buyMagazine(data.price)}>
+                                onClick={() => this.RequestOrderPayment()}>
                                 Buy Now!
-                              </Link> */}
-                              <button id="rzp-button1" onClick={() => this.RequestOrderPayment()}>
-                                Pay
                               </button>
+                              {/* <button id="rzp-button1" onClick={() => this.RequestOrderPayment()}>
+                                Pay
+                              </button> */}
                             </div>
                           </div>
                         </div>

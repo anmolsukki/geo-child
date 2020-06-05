@@ -3,7 +3,7 @@ import * as actionConstant from '../../Actions/ActionConstant/ActionConstant';
 const initialState = {
   reMagzineData: [],
   reMyMagzineData: [],
-  reViewMagzineData: '',
+  reViewMagzineData: [],
   isLoading: false,
   error: null,
 };

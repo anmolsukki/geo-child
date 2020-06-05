@@ -22,8 +22,7 @@ class ViewMagazine extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const ctrDocumentData = state.CtrMagazine;
-  //   console.log('hggvnvnvb=====>>>>>>>', ctrDocumentData);
+  const ctrDocumentData = state.CtrMagazine.reViewMagzineData;
   return {
     documentStateData: ctrDocumentData,
   };

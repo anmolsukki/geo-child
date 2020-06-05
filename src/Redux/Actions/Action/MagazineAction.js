@@ -49,7 +49,7 @@ export const viewMagaZineAction = (pdf) => {
       .get(url, { headers: await getHeaders(true) })
       .then((res) => {
         console.log(res, 'View Magazine Success');
-        dispatch(actionTypes.VIEW_MAGAZINE_SUCCESS(res.data.data));
+        dispatch(actionTypes.VIEW_MAGAZINE_SUCCESS(res));
       })
       .catch((error) => {
         console.log(error, 'View Magazine Error');
