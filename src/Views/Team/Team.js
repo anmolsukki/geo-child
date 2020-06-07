@@ -7,7 +7,6 @@ const Team = () => {
       <div className="banner about-img">
         <img src="img/teamSlide.jpeg" alt="" />
       </div>
-
       <div className="bg-level-2 first-part" style={{ width: '69.5px' }}></div>
       <section className="">
         <div className="container">
@@ -56,7 +55,6 @@ const Team = () => {
           </div>
         </div>
       </section>
-
       <section className="two">
         <div className="container">
           <div className="our_team">

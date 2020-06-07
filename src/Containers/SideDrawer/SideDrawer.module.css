@@ -1,6 +1,5 @@
 .sideDrawer {
   height: 100%;
-  background: #44aee4;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 56px;
@@ -11,6 +10,9 @@
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
   border-top: 1px solid #ffffff;
+  background: #f77b7d;
+  background: -webkit-linear-gradient(to right, #f77b7d, #f9d888, #c6ffdc);
+  background: linear-gradient(to right, #f77b7d, #f9d888, #c6ffdc);
 }
 
 .sideDrawer.open {

@@ -103,6 +103,10 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .toolbar {
+    height: 56px;
+  }
+
   .toolbarNavigation {
     display: flex;
     align-items: center;
@@ -117,5 +121,9 @@
 
   .toolbarNavigationItems {
     display: none;
+  }
+
+  .logo a img {
+    width: 125px;
   }
 }

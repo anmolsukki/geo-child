@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+const Footer = () => {
   return (
     <div>
       <div className="banner about-img">
@@ -10,7 +10,7 @@ function Footer() {
       <footer className="footer">
         <div className="container bottom_border">
           <div className="row">
-            <div className=" col-sm-4 col-md col-sm-4  col-12 col">
+            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
               <h5 className="headin5_amrc col_white_amrc pt2">Head Office</h5>
               <p className="mb10">Flat No. 100, Sector- 33, Noida - 201301 (U.P.)</p>
               <p>
@@ -29,27 +29,7 @@ function Footer() {
                 <i className="fa fa fa-envelope"></i> admn.geochild@gmail.com
               </p>
             </div>
-
-            <div className=" col-sm-4 col-md  col-6 col">
-              <h5 className="headin5_amrc col_white_amrc pt2">Disclaimer</h5>
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="//webenlance.com" style={{ fontSize: '10px', textAlign: 'justify' }}>
-                    The material published on this website is protected by copyright. No part or
-                    thereof shall be copied, reproduced or imitated in any form i.e. print, text,
-                    digital, video or audio. Articles, photos or other content once submitted,
-                    becomes the property of GeoChild. It may only be used for research or
-                    educational purposes with the prior permission from GeoChild. Authors may not
-                    sell, alter or further reproduce or distribute any part, once it becomes part of
-                    this publication. Failure to comply with the terms of this warning or any other
-                    violation may expose to legal action for copyright infringement. All the
-                    disputes, if arise, will be settled in District court of G.B. Nagar.
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className=" col-sm-4 col-md  col-6 col">
+            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
               <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
               <ul className="footer_ul_amrc">
                 <li>
@@ -72,10 +52,31 @@ function Footer() {
                 </li>
               </ul>
             </div>
-
-            <div className=" col-sm-4 col-md  col-12 col">
+            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+              <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
+              <ul className="footer_ul_amrc">
+                <li>
+                  <a href="//webenlance.com">Remove Background</a>
+                </li>
+                <li>
+                  <a href="//webenlance.com">Shadows & Mirror Reflection</a>
+                </li>
+                <li>
+                  <a href="//webenlance.com">Logo Design</a>
+                </li>
+                <li>
+                  <a href="//webenlance.com">Vectorization</a>
+                </li>
+                <li>
+                  <a href="//webenlance.com">Hair Masking/Clipping</a>
+                </li>
+                <li>
+                  <a href="//webenlance.com">Image Cropping</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
               <h5 className="headin5_amrc col_white_amrc pt2">Follow us</h5>
-
               <ul className="footer_ul2_amrc">
                 <li>
                   <a
@@ -140,7 +141,20 @@ function Footer() {
             </div>
           </div>
         </div>
-
+        <div className="container bottom_border">
+          <h5 className="headin5_amrc col_white_amrc pt1">Disclaimer</h5>
+          <p className="mb10 text-justify">
+            The material published on this website is protected by copyright. No part or thereof
+            shall be copied, reproduced or imitated in any form i.e. print, text, digital, video or
+            audio. Articles, photos or other content once submitted, becomes the property of
+            GeoChild. It may only be used for research or educational purposes with the prior
+            permission from GeoChild. Authors may not sell, alter or further reproduce or distribute
+            any part, once it becomes part of this publication. Failure to comply with the terms of
+            this warning or any other violation may expose to legal action for copyright
+            infringement. All the disputes, if arise, will be settled in District court of G.B.
+            Nagar.
+          </p>
+        </div>
         <div className="container">
           <ul className="foote_bottom_ul_amrc">
             <li>
@@ -168,7 +182,6 @@ function Footer() {
               <span className="fa fa-heart copyright"></span>
             </Link>
           </p>
-
           <ul className="social_footer_ul">
             <li>
               <a
@@ -198,6 +211,6 @@ function Footer() {
       </footer>
     </div>
   );
-}
+};
 
 export default Footer;

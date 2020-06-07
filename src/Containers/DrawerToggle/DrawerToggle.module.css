@@ -16,6 +16,6 @@
 
 .toggleButtonLine {
   width: 23px;
-  height: 2px;
-  background: red;
+  height: 3px;
+  background: #ed2224;
 }

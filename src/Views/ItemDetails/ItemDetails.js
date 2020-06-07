@@ -199,9 +199,6 @@ class ItemDetails extends Component {
                                 onClick={() => this.RequestOrderPayment()}>
                                 Buy Now!
                               </button>
-                              {/* <button id="rzp-button1" onClick={() => this.RequestOrderPayment()}>
-                                Pay
-                              </button> */}
                             </div>
                           </div>
                         </div>

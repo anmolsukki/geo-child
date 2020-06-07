@@ -10,7 +10,7 @@ const Contact = () => {
       </div>
 
       <div className="container">
-        <div className="col-md-10 col-lg-9 mx-auto">
+        <div className="col-md-10 col-lg-9 mx-auto contact-form-manage">
           <div className="contact-form">
             <div className="contact-image">
               <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
