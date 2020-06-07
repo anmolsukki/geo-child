@@ -5,7 +5,17 @@ export const LOGIN_SUCCESS = (data) => ({
   type: actionConstant.LOGIN_DATA_SUCCESS,
   data: data,
 });
-export const LOGIN_ERROR = (data) => ({ type: actionConstant.LOGIN_DATA_ERROR, data: data });
+export const LOGIN_ERROR = (data) => ({ type: actionConstant.GOOGLE_LOGIN_DATA_ERROR, data: data });
+
+export const GOOGLE_LOGIN_INIT = () => ({ type: actionConstant.GOOGLE_LOGIN_DATA_INIT });
+export const GOOGLE_LOGIN_SUCCESS = (data) => ({
+  type: actionConstant.LOGIN_DATA_SUCCESS,
+  data: data,
+});
+export const GOOGLE_LOGIN_ERROR = (data) => ({
+  type: actionConstant.GOOGLE_LOGIN_DATA_ERROR,
+  data: data,
+});
 
 export const REG_INIT = () => ({ type: actionConstant.REGISTER_INIT });
 export const REG_SUCCESS = (data) => ({
@@ -20,6 +30,20 @@ export const FORGOT_SUCCESS = (data) => ({
   data: data,
 });
 export const FORGOT_ERROR = (data) => ({ type: actionConstant.FORGOT_PASSWORD_ERROR, data: data });
+
+export const CONTACT_INIT = () => ({ type: actionConstant.CONTACT_US_INIT });
+export const CONTACT_SUCCESS = (data) => ({
+  type: actionConstant.CONTACT_US_SUCCESS,
+  data: data,
+});
+export const CONTACT_ERROR = (data) => ({ type: actionConstant.CONTACT_US_ERROR, data: data });
+
+export const TEAM_INIT = () => ({ type: actionConstant.TEAM_DATA_INIT });
+export const TEAM_SUCCESS = (data) => ({
+  type: actionConstant.TEAM_DATA_SUCCESS,
+  data: data,
+});
+export const TEAM_ERROR = (data) => ({ type: actionConstant.TEAM_DATA_ERROR, data: data });
 
 export const MAGAZINE_INIT = () => ({ type: actionConstant.MAGAZINE_DATA_INIT });
 export const MAGAZINE_SUCCESS = (data) => ({

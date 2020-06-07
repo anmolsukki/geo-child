@@ -6,6 +6,7 @@ class ViewMagazine extends Component {
   componentDidMount = () => {
     this.props.viewMagaZineActionData({ pdf: this.props.match.params.id });
   };
+
   render() {
     return (
       <div>

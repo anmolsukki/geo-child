@@ -3,13 +3,14 @@ import DefaultLayout from '../Containers';
 
 const Home = React.lazy(() => import('../Views/Home/Home'));
 const ItemDetails = React.lazy(() => import('../Views/ItemDetails/ItemDetails'));
-const About = React.lazy(() => import('../Views/About/About'));
+const About = React.lazy(() => import('../Views/About/AboutPage'));
 const Contact = React.lazy(() => import('../Views/Contact/Contact'));
 const Team = React.lazy(() => import('../Views/Team/Team'));
 const Magazines = React.lazy(() => import('../Views/Magazine/Magazines'));
 const ViewMagazine = React.lazy(() => import('../Views/Magazine/ViewMagazine'));
 const Login = React.lazy(() => import('../Views/Auth/Login/Login'));
 const Register = React.lazy(() => import('../Views/Auth/Register/Register'));
+const ProfilePage = React.lazy(() => import('../Views/Profile/ProfilePage'));
 
 const Routes = [
   { path: '/', name: 'Main', component: DefaultLayout, exact: true },
@@ -28,6 +29,7 @@ const Routes = [
   },
   { path: '/login', name: 'Login', component: Login, exact: true },
   { path: '/register', name: 'Register', component: Register, exact: true },
+  { path: '/profile', name: 'ProfilePage', component: ProfilePage, exact: true, isPrivate: true },
 ];
 
 export default Routes;

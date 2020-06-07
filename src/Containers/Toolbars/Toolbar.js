@@ -33,11 +33,15 @@ const navbar = (props) => {
                 <Link to="#">
                   <img src="img/user.svg" alt="" className={ToolbarClass.navImage} />
                 </Link>
-                <Link to="#">Profile</Link>
+                {localStorage.getItem('token') ? (
+                  <Link to="#">Logout</Link>
+                ) : (
+                  <Link to="#">Login</Link>
+                )}
                 <div className={ToolbarClass.ArrowUp}></div>
                 {localStorage.getItem('token') ? (
                   <div className={ToolbarClass.DropContainer}>
-                    <Link to="#">{localStorage.getItem('name')}</Link>
+                    <Link to="/profile">My Profile</Link>
                     <Link to="#" onClick={() => props.logout()}>
                       Logout
                     </Link>
@@ -45,7 +49,7 @@ const navbar = (props) => {
                 ) : (
                   <div className={ToolbarClass.DropContainer}>
                     <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link to="/register">Sign Up</Link>
                   </div>
                 )}
               </aside>

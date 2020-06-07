@@ -1,12 +1,3 @@
-.bgImageLogin {
-  background-image: url('/img/login-bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  width: 100%;
-  min-height: 100vh;
-}
-
 .bgImageRegister {
   background-image: url('/img/register-bg.png');
   background-size: cover;
@@ -18,7 +9,7 @@
 
 .formCOntainer {
   background: rgba(8, 8, 8, 0.7);
-  padding: 75px 0;
+  padding: 20px 0;
   margin: 0 40px;
   border-radius: 10px;
 }
@@ -142,7 +133,8 @@
   padding: 8px;
   color: white;
   background: #c03678;
-  border-radius: 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-family: 'fantasy';
 }

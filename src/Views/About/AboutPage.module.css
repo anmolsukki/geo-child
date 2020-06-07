@@ -1,0 +1,16 @@
+.main {
+  background: #f3f1f1;
+}
+
+.banner {
+  position: relative;
+}
+
+.aboutImg img {
+  width: 100%;
+}
+
+.first {
+  background-color: #f3f1f1;
+  display: block;
+}

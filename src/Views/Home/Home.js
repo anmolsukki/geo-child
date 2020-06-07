@@ -72,7 +72,7 @@ class Home extends Component {
                   <div className="card">
                     <img
                       className="card-img-top imgClipPath"
-                      src={`http://3.15.224.93:5050/api/v1/magzine/get-cover/${data.coverImages[0]}`}
+                      src={`${process.env.REACT_APP_BASE_URL}/magzine/get-cover/${data.coverImages[0]}`}
                       alt=""
                     />
                     <div className="card-body home-card">

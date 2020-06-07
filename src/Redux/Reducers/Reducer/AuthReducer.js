@@ -2,6 +2,7 @@ import * as actionConstant from '../../Actions/ActionConstant/ActionConstant';
 
 const initialState = {
   reLoginData: {},
+  reGoogleLoginData: {},
   reRegisterData: {},
   reForgotData: [],
   isLoading: false,
@@ -22,6 +23,24 @@ export const AuthReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case actionConstant.LOGIN_DATA_ERROR:
+      return {
+        ...state,
+        error: action.data ? action.data.message : null,
+        isLoading: false,
+      };
+
+    case actionConstant.GOOGLE_LOGIN_DATA_INIT:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionConstant.GOOGLE_LOGIN_DATA_SUCCESS:
+      return {
+        ...state,
+        reGoogleLoginData: action.data ? action.data : null,
+        isLoading: false,
+      };
+    case actionConstant.GOOGLE_LOGIN_DATA_ERROR:
       return {
         ...state,
         error: action.data ? action.data.message : null,

@@ -37,13 +37,17 @@ class Login extends Component {
     this.props.forgotActionData(data);
   };
 
+  googleLoginHandler = () => {
+    this.props.googleLoginActionData();
+  };
+
   render() {
     return (
       <div className="fadeInEffect">
         <ToastContainer limit={1} />
-        <div className={AuthClass.bgImageLogin}>
+        <div>
           <div className="row clr-margin">
-            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
+            <div className="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
               <div className={AuthClass.formCOntainer}>
                 <img src="img/avatar.svg" alt="" className={AuthClass.avatar} />
                 <h2 className={AuthClass.heading}>Login</h2>
@@ -57,7 +61,7 @@ class Login extends Component {
                   {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                       <div className="row">
-                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                           <div className={AuthClass.AuthFormVertical}>
                             <div className={AuthClass.authFormGroup}>
                               <div className={AuthClass.loginControl}>
@@ -117,6 +121,19 @@ class Login extends Component {
                     </form>
                   )}
                 </Formik>
+                <div className="row">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <button
+                      type="button"
+                      className="google-button"
+                      onClick={this.googleLoginHandler}>
+                      <span className="google-button__icon">
+                        <img src="img/Google.svg" alt="" />
+                      </span>
+                      <span className="google-button__text">Sign in with Google</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -172,7 +189,8 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch) => {
   return {
     LoginActionData: (data) => dispatch(actionCreator.LoginAction(data)),
-    forgotActionData: (data) => dispatch(actionCreator.ForgotAction(data)),
+    googleLoginActionData: (data) => dispatch(actionCreator.googleLoginAction(data)),
+    forgotActionData: () => dispatch(actionCreator.ForgotAction()),
   };
 };
 

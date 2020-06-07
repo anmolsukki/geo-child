@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import AboutClass from './AboutPage.module.css';
 
-class About extends React.Component {
+class AboutPage extends React.Component {
   state = {
     tab: 'eng',
   };
@@ -18,11 +19,11 @@ class About extends React.Component {
   render() {
     return (
       <div className="fadeInEffect">
-        <div className="main">
-          <div className="banner about-img">
-            <img src="./img/about.jpg" alt="" />
+        <div className={AboutClass.main}>
+          <div className={`${AboutClass.banner} ${AboutClass.aboutImg}`}>
+            <img src="./img/About/About.jpg" alt="" />
           </div>
-          <section className="first">
+          <section className={AboutClass.first}>
             <div className="container">
               <div className="row">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -162,109 +163,49 @@ class About extends React.Component {
           <section className="two">
             <div className="container">
               <div className="our_team">
-                <h3 className="title">Our Team</h3>
+                <h3 className="title">Our Characters</h3>
                 <div className="row">
                   <div className="col-md-3 col-sm-6">
                     <div className="our-team">
                       <div className="pic">
-                        <img
-                          src="https://images.pexels.com/photos/157646/title-photo-logo-shirt-157646.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                          alt="team member"
-                          className="img-responsive"
-                        />
+                        <img src="img/ourTeam1.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Amit kumar</h3>
-                        <span className="post">Ui Developer</span>
-                        <ul className="social">
-                          <li>
-                            <Link to="#" className="fa fa-facebook"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-twitter"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-linkedin"></Link>
-                          </li>
-                        </ul>
+                        <h3 className="title">Ami</h3>
+                        <span className="post">GeoChild Character</span>
                       </div>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-6">
                     <div className="our-team">
                       <div className="pic">
-                        <img
-                          src="https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"
-                          alt="team member"
-                          className="img-responsive"
-                        />
+                        <img src="img/ourTeam2.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Beauty Khan</h3>
-                        <span className="post">Ui Developer</span>
-                        <ul className="social">
-                          <li>
-                            <Link to="#" className="fa fa-facebook"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-twitter"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-linkedin"></Link>
-                          </li>
-                        </ul>
+                        <h3 className="title">Charlie</h3>
+                        <span className="post">GeoChild Character</span>
                       </div>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-6">
                     <div className="our-team">
                       <div className="pic">
-                        <img
-                          src="https://images.pexels.com/photos/157646/title-photo-logo-shirt-157646.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                          alt="team member"
-                          className="img-responsive"
-                        />
+                        <img src="img/ourTeam3.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Amit kumar</h3>
-                        <span className="post">Ui Developer</span>
-                        <ul className="social">
-                          <li>
-                            <Link to="#" className="fa fa-facebook"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-twitter"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-linkedin"></Link>
-                          </li>
-                        </ul>
+                        <h3 className="title">Geo Didi</h3>
+                        <span className="post">GeoChild Character</span>
                       </div>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-6">
                     <div className="our-team">
                       <div className="pic">
-                        <img
-                          src="https://images.pexels.com/photos/157646/title-photo-logo-shirt-157646.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                          alt="team member"
-                          className="img-responsive"
-                        />
+                        <img src="img/ourTeam4.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Amit kumar</h3>
-                        <span className="post">Ui Developer</span>
-                        <ul className="social">
-                          <li>
-                            <Link to="#" className="fa fa-facebook"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-twitter"></Link>
-                          </li>
-                          <li>
-                            <Link to="#" className="fa fa-linkedin"></Link>
-                          </li>
-                        </ul>
+                        <h3 className="title">Gracy</h3>
+                        <span className="post">GeoChild Character</span>
                       </div>
                     </div>
                   </div>
@@ -279,4 +220,4 @@ class About extends React.Component {
   }
 }
 
-export default About;
+export default AboutPage;

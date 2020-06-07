@@ -96,3 +96,20 @@ export const ForgotAction = (data) => {
       });
   };
 };
+
+export const googleLoginAction = () => {
+  let url = `${process.env.REACT_APP_BASE_URL}/customer/google-auth`;
+  return async (dispatch) => {
+    dispatch(actionTypes.GOOGLE_LOGIN_INIT());
+    return axios
+      .get(url, { headers: await getHeaders(false) })
+      .then((res) => {
+        console.log(res, 'Google Login Success');
+        dispatch(actionTypes.GOOGLE_LOGIN_SUCCESS(res));
+      })
+      .catch((error) => {
+        console.log(error, 'Google Login Error');
+        dispatch(actionTypes.LOGIN_ERROR(error));
+      });
+  };
+};
