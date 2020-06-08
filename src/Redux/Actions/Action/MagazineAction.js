@@ -42,7 +42,7 @@ export const myMagaZineAction = () => {
 };
 
 export const viewMagaZineAction = (pdf) => {
-  let url = `${process.env.REACT_APP_BASE_URL}/magzine/${pdf.pdf}`;
+  let url = `${process.env.REACT_APP_BASE_URL}/magzine/get-magzine/${pdf.pdf}`;
   return async (dispatch) => {
     dispatch(actionTypes.VIEW_MAGAZINE_INIT());
     return axios

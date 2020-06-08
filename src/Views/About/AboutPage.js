@@ -171,7 +171,7 @@ class AboutPage extends React.Component {
                         <img src="img/ourTeam1.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Ami</h3>
+                        <h3 className="title">Geo Didi</h3>
                         <span className="post">GeoChild Character</span>
                       </div>
                     </div>
@@ -182,7 +182,7 @@ class AboutPage extends React.Component {
                         <img src="img/ourTeam2.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Charlie</h3>
+                        <h3 className="title">Gracy</h3>
                         <span className="post">GeoChild Character</span>
                       </div>
                     </div>
@@ -193,7 +193,7 @@ class AboutPage extends React.Component {
                         <img src="img/ourTeam3.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Geo Didi</h3>
+                        <h3 className="title">Charlie</h3>
                         <span className="post">GeoChild Character</span>
                       </div>
                     </div>
@@ -204,7 +204,7 @@ class AboutPage extends React.Component {
                         <img src="img/ourTeam4.jpg" alt="team member" className="img-responsive" />
                       </div>
                       <div className="content">
-                        <h3 className="title">Gracy</h3>
+                        <h3 className="title">Ami</h3>
                         <span className="post">GeoChild Character</span>
                       </div>
                     </div>

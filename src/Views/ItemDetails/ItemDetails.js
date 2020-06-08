@@ -81,7 +81,7 @@ class ItemDetails extends Component {
         rzp1.open();
       })
       .catch((err) => {
-        console.log('bcbcb======>>>>', err.message);
+        console.log('error====>>>>', err.message);
       });
   };
 

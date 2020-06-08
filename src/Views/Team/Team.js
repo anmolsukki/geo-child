@@ -50,138 +50,27 @@ class Team extends React.Component {
             <div className="our_team">
               <h3 className="title">Our Team</h3>
               <div className="row">
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
+                {this.props.teamStoreData.map((data) =>
+                  data.type === 'member' ? (
+                    <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4" key={data._id}>
+                      <div className="card team-card2">
+                        <img
+                          className="card-img-top imgClipPath"
+                          src={`data:image/jpeg;base64,${data.photo}`}
+                          alt=""
+                        />
+                        <div className="team-description">
+                          <h5 className="card-title titleStyle team-name team-titile2">
+                            {data.name}
+                          </h5>
+                          <p className="card-text texOverflow team-designation team2">
+                            {data.designation}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 my-4">
-                  <div className="card team-card2">
-                    <img className="card-img-top imgClipPath" src="img/anm.jpg" alt="" />
-                    <div className="team-description">
-                      <h5 className="card-title titleStyle team-name team-titile2">Anmol Sukki</h5>
-                      <p className="card-text texOverflow team-designation team2">
-                        FRONTEND DEVELOPER
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  ) : null
+                )}
               </div>
             </div>
           </div>
@@ -194,7 +83,7 @@ class Team extends React.Component {
 
 const mapStateToProps = (state) => {
   const ctrTeamData = state.CtrTeam.reTeamData;
-  console.log('fcbcvb', ctrTeamData);
+  console.log('=========', ctrTeamData);
   return {
     teamStoreData: ctrTeamData,
   };

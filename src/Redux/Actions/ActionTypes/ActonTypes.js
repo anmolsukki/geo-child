@@ -45,6 +45,13 @@ export const TEAM_SUCCESS = (data) => ({
 });
 export const TEAM_ERROR = (data) => ({ type: actionConstant.TEAM_DATA_ERROR, data: data });
 
+export const NOTICE_INIT = () => ({ type: actionConstant.NOTICES_DATA_INIT });
+export const NOTICE_SUCCESS = (data) => ({
+  type: actionConstant.NOTICES_DATA_SUCCESS,
+  data: data,
+});
+export const NOTICE_ERROR = (data) => ({ type: actionConstant.NOTICES_DATA_ERROR, data: data });
+
 export const MAGAZINE_INIT = () => ({ type: actionConstant.MAGAZINE_DATA_INIT });
 export const MAGAZINE_SUCCESS = (data) => ({
   type: actionConstant.MAGAZINE_DATA_SUCCESS,

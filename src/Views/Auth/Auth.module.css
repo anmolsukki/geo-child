@@ -1,10 +1,19 @@
-.bgImageRegister {
-  background-image: url('/img/register-bg.png');
+.bgImageLogin {
+  background-image: url('/img/login-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
+}
+
+.bgImageRegister {
+  background-image: url('/img/register-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  min-height: 90vh;
 }
 
 .formCOntainer {
@@ -19,7 +28,6 @@
 }
 
 .heading {
-  margin: 15px 0;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 2.9rem;

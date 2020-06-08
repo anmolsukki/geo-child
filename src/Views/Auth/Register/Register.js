@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer } from 'react-toastify';
@@ -32,10 +33,10 @@ class Register extends Component {
         <ToastContainer limit={1} />
         <div className={AuthClass.bgImageRegister}>
           <div className="row clr-margin">
-            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
+            <div className="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
               <div className={AuthClass.formCOntainer}>
                 <img src="img/avatar.svg" alt="" className={AuthClass.avatar} />
-                <h2 className={AuthClass.heading}>Register</h2>
+                <h2 className={AuthClass.heading}>Signup</h2>
                 <Formik
                   initialValues={{ name: '', email: '', mobile: '', password: '' }}
                   validationSchema={ValidationSchema}
@@ -125,6 +126,11 @@ class Register extends Component {
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                          <Link to="/login" className={`text-right ${AuthClass.btnForgot}`}>
+                            Login
+                          </Link>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                           <button

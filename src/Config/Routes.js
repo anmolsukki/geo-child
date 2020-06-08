@@ -19,7 +19,7 @@ const Routes = [
   { path: '/about', name: 'About', component: About, exact: true },
   { path: '/contact', name: 'Contact', component: Contact, exact: true },
   { path: '/team', name: 'Team', component: Team, exact: true },
-  { path: '/magazine', name: 'Magazines', component: Magazines, exact: true, isPrivate: true },
+  { path: '/magazine', name: 'Magazines', component: Magazines, exact: true },
   {
     path: '/magazine/:id',
     name: 'ViewMagazine',

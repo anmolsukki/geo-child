@@ -45,7 +45,7 @@ class Login extends Component {
     return (
       <div className="fadeInEffect">
         <ToastContainer limit={1} />
-        <div>
+        <div className={AuthClass.bgImageLogin}>
           <div className="row clr-margin">
             <div className="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-5 ml-auto text-center">
               <div className={AuthClass.formCOntainer}>
@@ -101,13 +101,18 @@ class Login extends Component {
                             </div>
                           </div>
                         </div>
-                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mb-3">
                           <Link
                             to="#"
                             className={AuthClass.btnForgot}
                             data-toggle="modal"
                             data-target="#form">
                             Forgot Password
+                          </Link>
+                        </div>
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mb-3">
+                          <Link to="/register" className={`text-right ${AuthClass.btnForgot}`}>
+                            Signup
                           </Link>
                         </div>
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -182,7 +187,7 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
   return {};
 };
 
@@ -190,7 +195,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     LoginActionData: (data) => dispatch(actionCreator.LoginAction(data)),
     googleLoginActionData: (data) => dispatch(actionCreator.googleLoginAction(data)),
-    forgotActionData: () => dispatch(actionCreator.ForgotAction()),
+    forgotActionData: (data) => dispatch(actionCreator.ForgotAction(data)),
   };
 };
 

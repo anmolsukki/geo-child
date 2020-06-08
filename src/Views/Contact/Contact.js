@@ -43,41 +43,39 @@ class Contact extends React.Component {
                     <div className="address">
                       <h5>Address:</h5>
                       <ul className="list-unstyled">
-                        <li> T-Mobile Customer Relations</li>
-                        <li> PO Box 37380</li>
-                        <li> Albuquerque, NM 87176-7380</li>
+                        <li>Flat No. 100, Sector- 33,</li>
+                        <li>Noida - 201301 (U.P.)</li>
                       </ul>
-                      <p>Please don't send anything to this address.</p>
                     </div>
                     <div className="email">
                       <h5>Email:</h5>
                       <ul className="list-unstyled">
-                        <li> info@email.com</li>
-                        <li> info@email.com</li>
+                        <li> admn.geochild@gmail.com</li>
+                        <li> help@geochild.in</li>
                       </ul>
                     </div>
                     <div className="phone">
                       <h5>Phone:</h5>
                       <ul className="list-unstyled">
-                        <li> +91- 8800XXXXXX34</li>
-                        <li> +91- 8800XXXXXX34</li>
+                        <li> +91-8901089898</li>
+                        <li> +91-8901189898</li>
                       </ul>
                     </div>
                     <hr />
                     <div className="social">
                       <ul className="list-inline list-unstyled">
                         <li className="list-inline-item">
-                          <Link to="#">
+                          <Link to="http://www.facebook.com/geo.child.75">
                             <i className="fa fa-facebook-square fa-2x socialIconColor"></i>
                           </Link>
                         </li>
                         <li className="list-inline-item">
-                          <Link to="#">
+                          <Link to="https://google.com/">
                             <i className="fa fa-google-plus-square fa-2x socialIconColor"></i>
                           </Link>
                         </li>
                         <li className="list-inline-item">
-                          <Link to="#">
+                          <Link to="https://youtube.com/">
                             <i className="fa fa-youtube-play fa-2x socialIconColor"></i>
                           </Link>
                         </li>
