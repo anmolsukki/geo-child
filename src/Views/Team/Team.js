@@ -83,7 +83,6 @@ class Team extends React.Component {
 
 const mapStateToProps = (state) => {
   const ctrTeamData = state.CtrTeam.reTeamData;
-  console.log('=========', ctrTeamData);
   return {
     teamStoreData: ctrTeamData,
   };

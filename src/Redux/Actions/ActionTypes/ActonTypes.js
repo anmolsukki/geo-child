@@ -68,20 +68,3 @@ export const MY_MAGAZINE_ERROR = (data) => ({
   type: actionConstant.MY_MAGAZINE_DATA_ERROR,
   data: data,
 });
-
-export const VIEW_MAGAZINE_INIT = () => ({ type: actionConstant.VIEW_MAGAZINE_DATA_INIT });
-export const VIEW_MAGAZINE_SUCCESS = (data) => ({
-  type: actionConstant.VIEW_MAGAZINE_DATA_SUCCESS,
-  data: data,
-});
-export const VIEW_MAGAZINE_ERROR = (data) => ({
-  type: actionConstant.VIEW_MAGAZINE_DATA_ERROR,
-  data: data,
-});
-
-export const BUY_INIT = () => ({ type: actionConstant.BUY_MAGAZINE_INIT });
-export const BUY_SUCCESS = (data) => ({
-  type: actionConstant.BUY_MAGAZINE_SUCCESS,
-  data: data,
-});
-export const BUY_ERROR = (data) => ({ type: actionConstant.BUY_MAGAZINE_ERROR, data: data });

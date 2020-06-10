@@ -218,7 +218,6 @@ class Footer extends React.Component {
 
 const mapStateToProps = (state) => {
   const ctrNoticeData = state.CtrTeam.reNoticeData;
-  console.log('==========', ctrNoticeData);
   return {
     noticeData: ctrNoticeData,
   };

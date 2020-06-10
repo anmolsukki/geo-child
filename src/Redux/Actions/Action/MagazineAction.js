@@ -40,20 +40,3 @@ export const myMagaZineAction = () => {
       });
   };
 };
-
-export const viewMagaZineAction = (pdf) => {
-  let url = `${process.env.REACT_APP_BASE_URL}/magzine/get-magzine/${pdf.pdf}`;
-  return async (dispatch) => {
-    dispatch(actionTypes.VIEW_MAGAZINE_INIT());
-    return axios
-      .get(url, { headers: await getHeaders(true) })
-      .then((res) => {
-        console.log(res, 'View Magazine Success');
-        dispatch(actionTypes.VIEW_MAGAZINE_SUCCESS(res));
-      })
-      .catch((error) => {
-        console.log(error, 'View Magazine Error');
-        dispatch(actionTypes.VIEW_MAGAZINE_ERROR(error));
-      });
-  };
-};

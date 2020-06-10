@@ -21,7 +21,7 @@ const Routes = [
   { path: '/team', name: 'Team', component: Team, exact: true },
   { path: '/magazine', name: 'Magazines', component: Magazines, exact: true },
   {
-    path: '/magazine/:id',
+    path: '/profile/:id',
     name: 'ViewMagazine',
     component: ViewMagazine,
     exact: true,

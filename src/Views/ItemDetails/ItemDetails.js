@@ -15,6 +15,7 @@ class ItemDetails extends Component {
 
   componentDidMount = () => {
     this.props.AllMagaZineActionData({ id: this.props.match.params.id });
+    this.props.myMagaZineActionData();
   };
 
   imageChangeHandler = (image) => {
@@ -87,7 +88,6 @@ class ItemDetails extends Component {
 
   render() {
     const { documentStateData } = this.props;
-    console.log('fgbfb', documentStateData);
 
     if (documentStateData.isLoading) {
       return <Loader />;
@@ -218,6 +218,7 @@ class ItemDetails extends Component {
 
 const mapStateToProps = (state) => {
   const ctrDocumentData = state.CtrMagazine;
+  console.log('======', ctrDocumentData);
   return {
     documentStateData: ctrDocumentData,
   };
@@ -226,7 +227,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     AllMagaZineActionData: (id) => dispatch(actionCreator.AllMagaZineAction(id)),
-    buyMagazineActionData: (data) => dispatch(actionCreator.buyMagazineAction(data)),
+    myMagaZineActionData: () => dispatch(actionCreator.myMagaZineAction()),
   };
 };
 

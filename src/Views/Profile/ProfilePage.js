@@ -143,7 +143,7 @@ class ProfilePage extends Component {
                                 <p className="magMonth">{data.month}</p>
                                 <p className="card-text texDesciption">{data.description}</p>
                                 <Link
-                                  to={{ pathname: `/magazine/${data.magzineFile}` }}
+                                  to={{ pathname: `/profile/${data.magzineFile}` }}
                                   className="btn btn-primary btnStyle">
                                   Read
                                 </Link>
