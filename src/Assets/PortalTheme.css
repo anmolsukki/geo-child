@@ -350,8 +350,8 @@
 }
 
 .detail-card {
-  -webkit-animation: fadeInUp 3s ease;
-  animation: fadeInUp 3s ease;
+  -webkit-animation: fadeInUp 2s ease;
+  animation: fadeInUp 2s ease;
   box-shadow: 8px 0 87px rgba(0, 0, 0, 0.15);
   text-align: justify;
   font-family: 'Montserrat', sans-serif;

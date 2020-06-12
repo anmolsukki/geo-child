@@ -15,7 +15,6 @@ class ItemDetails extends Component {
 
   componentDidMount = () => {
     this.props.AllMagaZineActionData({ id: this.props.match.params.id });
-    this.props.myMagaZineActionData();
   };
 
   imageChangeHandler = (image) => {
@@ -192,13 +191,23 @@ class ItemDetails extends Component {
                               </div>
                             </div>
                             <div className="productInfo">
-                              <button
-                                to="#"
-                                id="rzp-button1"
-                                className="btn btn-primary btnStyle buyBtn"
-                                onClick={() => this.RequestOrderPayment()}>
-                                Buy Now!
-                              </button>
+                              {localStorage.getItem('token') ? (
+                                <button
+                                  to="#"
+                                  id="rzp-button1"
+                                  className="btn btn-primary btnStyle buyBtn"
+                                  onClick={() => this.RequestOrderPayment()}>
+                                  Buy Now!
+                                </button>
+                              ) : (
+                                <button
+                                  to="#"
+                                  id="rzp-button1"
+                                  className="btn btn-primary btnStyle buyBtn"
+                                  onClick={() => this.RequestOrderPayment()}>
+                                  Buy Now!
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -227,7 +236,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     AllMagaZineActionData: (id) => dispatch(actionCreator.AllMagaZineAction(id)),
-    myMagaZineActionData: () => dispatch(actionCreator.myMagaZineAction()),
   };
 };
 

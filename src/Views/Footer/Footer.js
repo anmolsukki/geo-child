@@ -172,7 +172,7 @@ class Footer extends React.Component {
                 <Link to="/team">Team</Link>
               </li>
               <li>
-                <Link to="/magazine">Magazine</Link>
+                <Link to="/profile">Magazine</Link>
               </li>
               <li>
                 <Link to="#">Special</Link>
