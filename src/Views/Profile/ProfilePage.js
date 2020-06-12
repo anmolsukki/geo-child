@@ -103,6 +103,7 @@ class ProfilePage extends Component {
                   <div className="row clr-margin profileMagazine">
                     {this.props.documentStateData.magzines &&
                       this.props.documentStateData.magzines.map((data) => {
+                        let magazineName = data.magzineFile.split('/')[4];
                         return (
                           <div
                             className="col-xl-5 col-lg-6 col-md-10 col-sm-6 col-12 my-4 mx-auto bodyCardSpace"
@@ -118,7 +119,7 @@ class ProfilePage extends Component {
                                 <p className="magMonth">{data.month}</p>
                                 <p className="card-text texDesciption">{data.description}</p>
                                 <Link
-                                  to={{ pathname: `/profile/${data.magzineFile}` }}
+                                  to={{ pathname: `/magzines/${magazineName}` }}
                                   className="btn btn-primary btnStyle">
                                   Read
                                 </Link>
@@ -249,7 +250,6 @@ class ProfilePage extends Component {
 
 const mapStateToProps = (state) => {
   const ctrDocumentData = state.CtrMagazine.reMyMagzineData;
-  console.log('========', ctrDocumentData);
   return {
     documentStateData: ctrDocumentData,
   };

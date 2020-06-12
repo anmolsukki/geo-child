@@ -15,7 +15,7 @@ class ItemDetails extends Component {
 
   componentDidMount = () => {
     if (localStorage.getItem('token')) {
-      this.props.profileData();
+      this.props.myMagaZineActionData();
     }
     this.props.AllMagaZineActionData({ id: this.props.match.params.id });
   };
@@ -25,7 +25,9 @@ class ItemDetails extends Component {
     container.src = image;
   };
 
-  RequestOrderPayment = () => {
+  RequestOrderPayment = (e) => {
+    e.target.textContent = 'processing...';
+    e.target.setAttribute('disabled', true);
     let magzineId = this.props.documentStateData.reMagzineData[0]._id;
     let ammunt = this.props.documentStateData.reMagzineData[0].price;
     var myHeaders = new Headers();
@@ -198,7 +200,7 @@ class ItemDetails extends Component {
                                 <button
                                   id="rzp-button1"
                                   className="btn btn-primary btnStyle buyBtn"
-                                  onClick={() => this.RequestOrderPayment()}>
+                                  onClick={(e) => this.RequestOrderPayment(e)}>
                                   Buy Now!
                                 </button>
                               ) : (

@@ -3,6 +3,11 @@
   margin-top: 100px;
 }
 
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* Toastify */
 .Toastify__toast-container--top-right {
   top: 101px !important;
@@ -1246,13 +1251,25 @@ footer p {
   position: relative;
 }
 
-.image-container img {
+.image-container {
   height: 100%;
+  width: 100%;
   padding: 30px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  overflow: auto;
+  cursor: grab;
+  cursor: -o-grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.image-container img {
+  height: 100%;
+  width: auto;
 }
 .controls {
   height: auto;
@@ -1261,12 +1278,14 @@ footer p {
   right: 0;
   position: fixed;
   margin: 10px 20px 0px;
+  z-index: 1;
 }
 .circle {
   border-radius: 50%;
   background: white;
   display: inline-block;
   margin: 5px;
+  cursor: pointer;
 }
 .circle i {
   padding: 10px;
@@ -1283,6 +1302,7 @@ footer p {
   left: 0;
   top: 50%;
   background-color: #fff;
+  z-index: 1;
 }
 
 .right-swipe {
@@ -1290,4 +1310,5 @@ footer p {
   right: 0;
   top: 50%;
   background-color: #fff;
+  z-index: 1;
 }

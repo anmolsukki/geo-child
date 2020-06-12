@@ -21,11 +21,10 @@ const Routes = [
   { path: '/team', name: 'Team', component: Team, exact: true },
   { path: '/feedback', name: 'Feedback', component: Feedback, exact: true, isPrivate: true },
   {
-    path: '/profile/:id',
+    path: '/magzines/:id',
     name: 'ViewMagazine',
     component: ViewMagazine,
     exact: true,
-    isPrivate: true,
   },
   { path: '/login', name: 'Login', component: Login, exact: true },
   { path: '/register', name: 'Register', component: Register, exact: true },
