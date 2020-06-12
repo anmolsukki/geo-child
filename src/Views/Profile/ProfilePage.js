@@ -33,10 +33,13 @@ class ProfilePage extends Component {
   };
 
   profileHandleChange = (e) => {
+    const { value, maxLength } = e.target;
+    const phone = value.slice(0, maxLength);
     this.setState({
       profile: {
         ...this.state.profile,
         [e.target.name]: e.target.value,
+        phone,
       },
     });
   };
@@ -133,7 +136,6 @@ class ProfilePage extends Component {
                     <div className="row">
                       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
                         <div className="bodyViewInputMain">
-                          {console.log('====fsjkhgf', this.state)}
                           <input
                             type="text"
                             placeholder="Name"
@@ -162,6 +164,7 @@ class ProfilePage extends Component {
                             type="number"
                             placeholder="Phone"
                             name="phone"
+                            maxlength={10}
                             value={this.state.profile.phone}
                             className="bodyViewInputForm"
                             onChange={this.profileHandleChange}

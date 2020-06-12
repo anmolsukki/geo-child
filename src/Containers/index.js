@@ -27,8 +27,8 @@ class Main extends React.Component {
         img: 'img/team.svg',
       },
       {
-        title: 'Offers',
-        link: '/magazine',
+        title: 'Feedback',
+        link: '/feedback',
         img: 'img/magazine.svg',
       },
     ],
