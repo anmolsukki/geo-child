@@ -998,7 +998,8 @@ footer p {
   -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
   box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
   height: 100%;
-  min-height: 550px;
+  min-height: 500px;
+  max-height: 500px;
 }
 
 .sectionContainer {
@@ -1034,7 +1035,8 @@ footer p {
   -webkit-box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
   height: 100%;
-  min-height: 550px;
+  min-height: 500px;
+  max-height: 500px;
 }
 
 .formbody {
@@ -1112,7 +1114,7 @@ footer p {
 
 .profileMagazine {
   overflow: auto;
-  height: 550px;
+  height: 415px;
 }
 
 /* Feedback Form */

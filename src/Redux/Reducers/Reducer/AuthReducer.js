@@ -5,6 +5,7 @@ const initialState = {
   reGoogleLoginData: {},
   reRegisterData: {},
   reForgotData: [],
+  reChangeData: {},
   isLoading: false,
   error: null,
 };
@@ -59,6 +60,24 @@ export const AuthReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case actionConstant.REGISTER_ERROR:
+      return {
+        ...state,
+        error: action.data ? action.data.message : null,
+        isLoading: false,
+      };
+
+    case actionConstant.CHANGE_PASSWORD_INIT:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionConstant.CHANGE_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        reChangeData: action.data ? action.data : null,
+        isLoading: false,
+      };
+    case actionConstant.CHANGE_PASSWORD_ERROR:
       return {
         ...state,
         error: action.data ? action.data.message : null,

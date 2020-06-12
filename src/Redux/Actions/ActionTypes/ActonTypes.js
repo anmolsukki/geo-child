@@ -24,6 +24,13 @@ export const REG_SUCCESS = (data) => ({
 });
 export const REG_ERROR = (data) => ({ type: actionConstant.REGISTER_ERROR, data: data });
 
+export const CHANGE_INIT = () => ({ type: actionConstant.CHANGE_PASSWORD_INIT });
+export const CHANGE_SUCCESS = (data) => ({
+  type: actionConstant.CHANGE_PASSWORD_SUCCESS,
+  data: data,
+});
+export const CHANGE_ERROR = (data) => ({ type: actionConstant.CHANGE_PASSWORD_ERROR, data: data });
+
 export const FORGOT_INIT = () => ({ type: actionConstant.FORGOT_PASSWORD_INIT });
 export const FORGOT_SUCCESS = (data) => ({
   type: actionConstant.FORGOT_PASSWORD_SUCCESS,

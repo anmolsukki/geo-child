@@ -113,3 +113,36 @@ export const googleLoginAction = () => {
       });
   };
 };
+
+export const changePasswordAction = (data) => {
+  let url = `${process.env.REACT_APP_BASE_URL}/customer/change-password`;
+  return async (dispatch) => {
+    dispatch(actionTypes.REG_INIT());
+    return axios
+      .post(url, data, { headers: await getHeaders(true) })
+      .then((res) => {
+        console.log(res, 'Change Password Success');
+        dispatch(actionTypes.CHANGE_SUCCESS(res.data));
+        if (res.status === 200) {
+          swal({
+            title: 'Success',
+            icon: 'success',
+            dangerMode: false,
+            button: 'OK',
+          }).then((result) => {
+            if (result) {
+              window.location.reload();
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error, 'Change Password Error');
+        dispatch(actionTypes.CHANGE_ERROR(error));
+        toast.success(error.response.data.message, {
+          autoClose: 1000,
+          transition: Flip,
+        });
+      });
+  };
+};
