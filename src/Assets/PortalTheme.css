@@ -1102,5 +1102,10 @@ footer p {
 .bodyImgClipPath {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 280px, 0 100%);
-  max-height: 220px;
+  max-height: 200px;
+}
+
+.profileMagazine {
+  overflow: auto;
+  height: 550px;
 }

@@ -26,7 +26,7 @@ export const noticesAction = () => {
     return axios
       .get(url, { headers: await getHeaders(false) })
       .then((res) => {
-        console.log(res, 'Notice Success');
+        // console.log(res, 'Notice Success');
         dispatch(actionTypes.NOTICE_SUCCESS(res.data.data));
       })
       .catch((error) => {

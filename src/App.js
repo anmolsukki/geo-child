@@ -15,6 +15,10 @@ const DefaultLayout = loadable(() => import('./Containers'), {
 });
 
 class App extends Component {
+  // componentWillMount = () => {
+  //   document.addEventListener('contextmenu', (event) => event.preventDefault());
+  // };
+
   render() {
     return (
       <main className="pageHight">

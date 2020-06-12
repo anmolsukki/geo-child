@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
 import Loader from '../../Utils/Loader';
@@ -14,6 +14,9 @@ class ItemDetails extends Component {
   }
 
   componentDidMount = () => {
+    if (localStorage.getItem('token')) {
+      this.props.profileData();
+    }
     this.props.AllMagaZineActionData({ id: this.props.match.params.id });
   };
 
@@ -66,9 +69,9 @@ class ItemDetails extends Component {
             xhr.send(JSON.stringify(data));
           },
           prefill: {
-            name: 'Rupesh',
-            email: 'rupesh.kumar@hsc.com',
-            contact: '8860979460',
+            name: this.props.profileData.name,
+            email: this.props.profileData.email,
+            contact: this.props.profileData.mobile,
           },
           notes: {
             address: '',
@@ -193,20 +196,15 @@ class ItemDetails extends Component {
                             <div className="productInfo">
                               {localStorage.getItem('token') ? (
                                 <button
-                                  to="#"
                                   id="rzp-button1"
                                   className="btn btn-primary btnStyle buyBtn"
                                   onClick={() => this.RequestOrderPayment()}>
                                   Buy Now!
                                 </button>
                               ) : (
-                                <button
-                                  to="#"
-                                  id="rzp-button1"
-                                  className="btn btn-primary btnStyle buyBtn"
-                                  onClick={() => this.RequestOrderPayment()}>
+                                <Link to="/login" className="btn btn-primary btnStyle buyBtn">
                                   Buy Now!
-                                </button>
+                                </Link>
                               )}
                             </div>
                           </div>
@@ -227,15 +225,17 @@ class ItemDetails extends Component {
 
 const mapStateToProps = (state) => {
   const ctrDocumentData = state.CtrMagazine;
-  console.log('======', ctrDocumentData);
+  const ctrProfile = state.CtrMagazine.reMyMagzineData;
   return {
     documentStateData: ctrDocumentData,
+    profileData: ctrProfile,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     AllMagaZineActionData: (id) => dispatch(actionCreator.AllMagaZineAction(id)),
+    myMagaZineActionData: () => dispatch(actionCreator.myMagaZineAction()),
   };
 };
 

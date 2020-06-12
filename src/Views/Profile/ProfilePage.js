@@ -6,10 +6,48 @@ import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
 class ProfilePage extends Component {
   state = {
     onStep: 1,
+    profile: {
+      name: '',
+      phone: '',
+    },
+    changePassword: {
+      currentPass: '',
+      newPass: '',
+      confirmPass: '',
+    },
   };
 
   componentDidMount = () => {
     this.props.myMagaZineActionData();
+  };
+
+  componentWillReceiveProps = () => {
+    const profileDetail = this.props.documentStateData;
+    this.setState({
+      profile: {
+        ...this.state.profile,
+        name: profileDetail.name,
+        phone: profileDetail.mobile,
+      },
+    });
+  };
+
+  profileHandleChange = (e) => {
+    this.setState({
+      profile: {
+        ...this.state.profile,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  passwordHandleChange = (e) => {
+    this.setState({
+      changePassword: {
+        ...this.state.changePassword,
+        [e.target.name]: e.target.value,
+      },
+    });
   };
 
   goToStep = (step) => {
@@ -18,6 +56,10 @@ class ProfilePage extends Component {
         onStep: step,
       });
     }
+  };
+
+  logoutHandler = () => {
+    localStorage.clear();
   };
 
   render() {
@@ -29,17 +71,17 @@ class ProfilePage extends Component {
               <ul className="sectionContainer">
                 <li className="sectionList" onClick={() => this.goToStep(1)}>
                   <Link to="#" className={`sectonName ${this.state.onStep === 1 ? 'active' : ''}`}>
-                    Profile
+                    My Magazine
                   </Link>
                 </li>
                 <li className="sectionList" onClick={() => this.goToStep(2)}>
                   <Link to="#" className={`sectonName ${this.state.onStep === 2 ? 'active' : ''}`}>
-                    Change Password
+                    Profile
                   </Link>
                 </li>
                 <li className="sectionList" onClick={() => this.goToStep(3)}>
                   <Link to="#" className={`sectonName ${this.state.onStep === 3 ? 'active' : ''}`}>
-                    My Magazine
+                    Change Password
                   </Link>
                 </li>
                 <li className="sectionList" onClick={() => this.goToStep(4)}>
@@ -54,83 +96,13 @@ class ProfilePage extends Component {
             <div className="bodyView formbody">
               {this.state.onStep === 1 ? (
                 <div>
-                  <div className="form-title">User Profile Details!</div>
-                  <div className="form-body">
-                    <div className="row">
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input type="text" placeholder="Name" className="bodyViewInputForm" />
-                        </div>
-                      </div>
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input type="text" placeholder="Email" className="bodyViewInputForm" />
-                        </div>
-                      </div>
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input type="text" placeholder="Phone" className="bodyViewInputForm" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rule"></div>
-                  <div className="form-footer">
-                    <Link to="#">
-                      Submit!<span className="fa fa-thumbs-o-up"></span>
-                    </Link>
-                  </div>
-                </div>
-              ) : this.state.onStep === 2 ? (
-                <div>
-                  <div className="form-title">Change Password</div>
-                  <div className="form-body">
-                    <div className="row">
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input
-                            type="text"
-                            placeholder="Current Password"
-                            className="bodyViewInputForm"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input
-                            type="text"
-                            placeholder="New Password"
-                            className="bodyViewInputForm"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                        <div className="bodyViewInputMain">
-                          <input
-                            type="text"
-                            placeholder="Confirm Password"
-                            className="bodyViewInputForm"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rule"></div>
-                  <div className="form-footer">
-                    <Link to="#">
-                      Submit!<span className="fa fa-thumbs-o-up"></span>
-                    </Link>
-                  </div>
-                </div>
-              ) : this.state.onStep === 3 ? (
-                <div>
                   <div className="form-title">My Magazines</div>
-                  <div className="row clr-margin">
+                  <div className="row clr-margin profileMagazine">
                     {this.props.documentStateData.magzines &&
                       this.props.documentStateData.magzines.map((data) => {
                         return (
                           <div
-                            className="col-xl-6 col-lg-6 col-md-10 col-sm-6 col-12 my-4 bodyCardSpace"
+                            className="col-xl-5 col-lg-6 col-md-10 col-sm-6 col-12 my-4 mx-auto bodyCardSpace"
                             key={data._id}>
                             <div className="card">
                               <img
@@ -154,8 +126,109 @@ class ProfilePage extends Component {
                       })}
                   </div>
                 </div>
-              ) : this.state.onStep === 4 ? (
+              ) : this.state.onStep === 2 ? (
                 <div>
+                  <div className="form-title">User Profile Details!</div>
+                  <div className="form-body">
+                    <div className="row">
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          {console.log('====fsjkhgf', this.state)}
+                          <input
+                            type="text"
+                            placeholder="Name"
+                            name="name"
+                            value={this.state.profile.name}
+                            className="bodyViewInputForm"
+                            onChange={this.profileHandleChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          <input
+                            type="text"
+                            placeholder="Email"
+                            name="email"
+                            value={this.props.documentStateData.email}
+                            className="bodyViewInputForm"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          <input
+                            type="number"
+                            placeholder="Phone"
+                            name="phone"
+                            value={this.state.profile.phone}
+                            className="bodyViewInputForm"
+                            onChange={this.profileHandleChange}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rule"></div>
+                  <div className="form-footer">
+                    <Link to="#">
+                      Submit!<span className="fa fa-thumbs-o-up"></span>
+                    </Link>
+                  </div>
+                </div>
+              ) : this.state.onStep === 3 ? (
+                <div>
+                  <div className="form-title">Change Password</div>
+                  <div className="form-body">
+                    <div className="row">
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          <input
+                            type="text"
+                            name="currentPass"
+                            value={this.state.changePassword.currentPass}
+                            placeholder="Current Password"
+                            className="bodyViewInputForm"
+                            onChange={this.passwordHandleChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          <input
+                            type="text"
+                            name="newPass"
+                            value={this.state.changePassword.newPass}
+                            placeholder="New Password"
+                            className="bodyViewInputForm"
+                            onChange={this.passwordHandleChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                        <div className="bodyViewInputMain">
+                          <input
+                            type="text"
+                            name="confirmPass"
+                            placeholder="Confirm Password"
+                            value={this.state.changePassword.confirmPass}
+                            className="bodyViewInputForm"
+                            onChange={this.passwordHandleChange}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rule"></div>
+                  <div className="form-footer">
+                    <Link to="#">
+                      Submit!<span className="fa fa-thumbs-o-up"></span>
+                    </Link>
+                  </div>
+                </div>
+              ) : this.state.onStep === 4 ? (
+                <div onClick={this.logoutHandler}>
                   <div className="form-title">Logout</div>
                   <div className="form-body"></div>
                   <div className="form-footer">
@@ -173,6 +246,7 @@ class ProfilePage extends Component {
 
 const mapStateToProps = (state) => {
   const ctrDocumentData = state.CtrMagazine.reMyMagzineData;
+  console.log('========', ctrDocumentData);
   return {
     documentStateData: ctrDocumentData,
   };
