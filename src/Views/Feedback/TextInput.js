@@ -3,8 +3,8 @@ import React from 'react';
 export const TextInput = ({ type, mainClass, className, value, name, onChange, label }) => {
   return (
     <div className={mainClass}>
-      <label className="control-label">{label}</label>
-      <div className="controls">
+      <label className="feedback-control-label">{label}</label>
+      <div className="feedback-controls">
         <input type={type} className={className} value={value} name={name} onChange={onChange} />
       </div>
     </div>

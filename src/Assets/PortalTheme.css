@@ -777,6 +777,7 @@ footer p {
 /* Contact */
 .banner {
   position: relative;
+  background-image: linear-gradient(45deg, #090a40, #090a40);
 }
 
 .about-img img {
@@ -1127,56 +1128,54 @@ footer p {
   min-height: 100vh;
 }
 
+.feedback-form-container {
+  background: rgba(111, 105, 137, 0.75);
+  border-radius: 10px;
+  padding: 15px 45px;
+}
+
 .page-content-inner {
   border-radius: 0px;
   min-height: 100%;
   position: relative;
 }
 
-/* .counselling-page-header {
+.counselling-page-header {
   width: 100%;
   border: none;
-} */
+}
 
-/* .feedback-main-title {
+.feedback-main-title {
   color: #fff;
   line-height: 30px;
-  font-size: 55px;
+  font-size: 35px;
+  padding: 10px 20px 40px;
   letter-spacing: 2px;
   font-weight: bolder;
   margin: 0;
   text-align: center;
   position: relative;
   font-family: 'Poppins-SemiBold';
-} */
+}
 
 .feedback-form-vertical {
   width: 65%;
   margin: auto;
 }
 
-/* .feedback-form-info {
-  color: #ffffff;
-  font-size: 20px;
-  box-sizing: border-box;
-  letter-spacing: 1px;
-  font-family: 'Poppins-SemiBold';
-  margin-top: 65px;
-} */
-
 .feedback-form-group {
-  width: 90%;
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .feedback-form-control {
-  color: #ffffff;
+  color: #000000;
   outline: 0;
   padding: 0px 11px !important;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   vertical-align: top;
-  background-color: #464646;
+  background-color: #ffffff;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
@@ -1185,20 +1184,20 @@ footer p {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #888888;
+  border: 1px solid #ffffff;
   transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
-  height: 45px;
+  height: 40px;
   font-family: 'Poppins-regular';
   line-height: 34px;
   width: 100%;
 }
 
 .feedback-control-label {
-  color: white;
+  color: #ffffff;
   display: inline-block;
   vertical-align: top;
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 20px;
   margin-bottom: 0px;
   margin-right: 5px;
@@ -1313,4 +1312,53 @@ footer p {
   top: 50%;
   background-color: #fff;
   z-index: 1;
+}
+
+/* Checkbox */
+.check-heading {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Poppins-regular';
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-right: 25px;
+  width: 100%;
+}
+
+.checkMarkValue {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.feedback-checkbox {
+  background: #ffffff;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.textare-controls {
+  width: 100%;
+}
+
+.form-textarea {
+  background-color: #ffffff;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  padding: 5px 10px 0 5px !important;
+  color: #000000;
+  width: 100%;
+}
+
+.form-textarea:focus {
+  outline: none;
 }

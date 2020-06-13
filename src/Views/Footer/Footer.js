@@ -52,7 +52,7 @@ class Footer extends React.Component {
                 <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
                 <ul className="footer_ul_amrc">
                   <li>
-                    <a href="http://geochild.in:5050/statics/treasure-hunt.jpg">Trazer Hunt</a>
+                    <a href="http://geochild.in:5050/statics/treasure-hunt.jpg">Treasure Hunt</a>
                   </li>
                   <li>
                     <a href="http://geochild.in:5050/statics/ambulance.pdf">Ambulance</a>

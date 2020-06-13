@@ -65,7 +65,7 @@ class ViewMagazine extends React.Component {
                 <i className="fas fa-chevron-left"></i>
               </div>
             </div>
-            <div className="circle" onClick={this.nextHandler}>
+            <div className="circle" onClick={this.state.currentPage < 33 ? this.nextHandler : null}>
               <div className="right-swipe">
                 <i className="fas fa-chevron-right"></i>
               </div>

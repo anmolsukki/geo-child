@@ -41,10 +41,10 @@ class Home extends Component {
                 <img className="d-block img-fluid" src="img/slider1.png" alt="" />
               </div>
               <div className="carousel-item">
-                <img className="d-block img-fluid" src="img/slider2.jpeg" alt="" />
+                <img className="d-block img-fluid" src="img/slider2.JPG" alt="" />
               </div>
               <div className="carousel-item">
-                <img className="d-block img-fluid" src="img/slider3.jpeg" alt="" />
+                <img className="d-block img-fluid" src="img/slider3.jpg" alt="" />
               </div>
             </div>
             <a href="#main-carousel" className="carousel-control-prev" data-slide="prev">
