@@ -10,6 +10,41 @@ class Contact extends React.Component {
   state = {
     name: '',
   };
+
+  componentDidMount = () => {
+    // this.createBalloons(50);
+  };
+
+  random = (num) => {
+    return Math.floor(Math.random() * num);
+  };
+
+  getRandomStyles = () => {
+    var r = this.random(255);
+    var g = this.random(255);
+    var b = this.random(255);
+    var mt = this.random(200);
+    var ml = this.random(50);
+    var dur = this.random(5) + 5;
+    return `
+    background-color: rgba(${r},${g},${b},0.7);
+    color: rgba(${r},${g},${b},0.7); 
+    box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+    margin: ${mt}px 0 0 ${ml}px;
+    animation: float ${dur}s ease-in infinite
+    `;
+  };
+
+  createBalloons = (num) => {
+    var balloonContainer = document.getElementById('balloon-container');
+    for (var i = num; i > 0; i--) {
+      var balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.cssText = this.getRandomStyles();
+      balloonContainer.append(balloon);
+    }
+  };
+
   contactusHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -30,9 +65,6 @@ class Contact extends React.Component {
     return (
       <div>
         <ToastContainer limit={1} />
-        <div className="banner about-img">
-          <img src="img/contact.jpg" alt="" />
-        </div>
         <div className="container">
           <div className="col-md-10 col-lg-9 mx-auto contact-form-manage">
             <div className="contact-form">
@@ -44,21 +76,39 @@ class Contact extends React.Component {
                 <div className="row">
                   <div className="col-md-5">
                     <div className="address">
-                      <h5>Address:</h5>
+                      <h5>Head Office</h5>
                       <ul className="list-unstyled">
                         <li>Flat No. 100, Sector- 33,</li>
                         <li>Noida - 201301 (U.P.)</li>
                       </ul>
                     </div>
+                    <div className="address">
+                      <p className="contact-phone">Haryana Office</p>
+                      <ul className="list-unstyled">
+                        <li>H. No. 1123, Sector- 6,</li>
+                        <li>Bahadurgarh – 124507 (HR.)</li>
+                      </ul>
+                    </div>
                     <div className="email">
-                      <h5>Email:</h5>
+                      <p className="contact-phone">Dealership Enquiry:</p>
                       <ul className="list-unstyled">
                         <li> admn.geochild@gmail.com</li>
-                        <li> help@geochild.in</li>
+                      </ul>
+                    </div>
+                    <div className="email">
+                      <p className="contact-phone">Subscription Enquiry:</p>
+                      <ul className="list-unstyled">
+                        <li> subscription.geochild@gmail.com</li>
+                      </ul>
+                    </div>
+                    <div className="email">
+                      <p className="contact-phone">Complaint/Suggestions:</p>
+                      <ul className="list-unstyled">
+                        <li>complaint.geochild@gmail.com</li>
                       </ul>
                     </div>
                     <div className="phone">
-                      <h5>Phone:</h5>
+                      <p className="contact-phone">Phone:</p>
                       <ul className="list-unstyled">
                         <li> +91-8901089898</li>
                         <li> +91-8901189898</li>
@@ -136,6 +186,7 @@ class Contact extends React.Component {
           </div>
         </div>
         <Footer />
+        {/* <div id="balloon-container"></div> */}
       </div>
     );
   }

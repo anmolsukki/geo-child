@@ -102,6 +102,10 @@ class ItemDetails extends Component {
     return (
       <div className="fadeInEffect">
         <section className="first">
+          <div id="butterfly">
+            <div id="leftwing"></div>
+            <div id="rightwing"></div>
+          </div>
           <div className="container">
             <div className="col-md-10 col-12 mx-auto detailSpace">
               <div className="card detail-card">
@@ -196,17 +200,23 @@ class ItemDetails extends Component {
                               </div>
                             </div>
                             <div className="productInfo">
-                              {localStorage.getItem('token') ? (
-                                <button
-                                  id="rzp-button1"
-                                  className="btn btn-primary btnStyle buyBtn"
-                                  onClick={(e) => this.RequestOrderPayment(e)}>
-                                  Buy Now!
-                                </button>
+                              {data.isPublished ? (
+                                localStorage.getItem('token') ? (
+                                  <button
+                                    id="rzp-button1"
+                                    className="btn btn-primary btnStyle buyBtn"
+                                    onClick={(e) => this.RequestOrderPayment(e)}>
+                                    Buy Now!
+                                  </button>
+                                ) : (
+                                  <Link to="/login" className="btn btn-primary btnStyle buyBtn">
+                                    Buy Now!
+                                  </Link>
+                                )
                               ) : (
-                                <Link to="/login" className="btn btn-primary btnStyle buyBtn">
-                                  Buy Now!
-                                </Link>
+                                <button className="btn btn-primary btnStyle buyBtn" disabled>
+                                  Comming Soon...
+                                </button>
                               )}
                             </div>
                           </div>

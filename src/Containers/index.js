@@ -12,19 +12,24 @@ class Main extends React.Component {
     sideDrawerOpen: false,
     navData: [
       {
+        title: 'Home',
+        link: '/home',
+        img: 'img/home.svg',
+      },
+      {
         title: 'About',
         link: '/about',
+        img: 'img/about.svg',
+      },
+      {
+        title: 'Team',
+        link: '/team',
         img: 'img/team.svg',
       },
       {
         title: 'Contact',
         link: '/contact',
         img: 'img/navContact.svg',
-      },
-      {
-        title: 'Team',
-        link: '/team',
-        img: 'img/team.svg',
       },
       {
         title: 'Feedback',

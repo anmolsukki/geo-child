@@ -43,12 +43,31 @@ class Team extends React.Component {
                 )}
               </div>
             </div>
+            <div className="our_team  design-bg-left">
+              <h3 className="title">Our Mentor</h3>
+              <div className="row design-bg-right">
+                <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 my-4 mx-auto">
+                  <div className="card team-card">
+                    <img
+                      className="card-img-top imgClipPath team-img"
+                      src="img/Chairperson.jpeg"
+                      alt=""
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title titleStyle team-name">SMT. APARNA SINGH</h5>
+                      <p className="card-text texOverflow team-designation">Chairperson</p>
+                      <p className="card-text texOverflow team-designation">ICJJR</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="two">
           <div className="container">
             <div className="our_team">
-              <h3 className="title">Our Team</h3>
+              <h3 className="title">Board of Advisory</h3>
               <div className="row">
                 {this.props.teamStoreData.map((data) =>
                   data.type === 'member' ? (

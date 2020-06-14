@@ -289,8 +289,23 @@
   font-family: 'Teko', sans-serif;
 }
 
+.about-cardss {
+  font-family: 'Bellota', cursive;
+  color: #ffffff;
+}
+
+.about-descc {
+  font-family: 'Bellota', cursive;
+  font-style: italic;
+  color: #ffffff;
+}
+
 .card-text {
   text-align: justify;
+}
+
+.about-grad {
+  background: linear-gradient(to right, #373b44, #4286f4);
 }
 
 .magazinetitle {
@@ -671,10 +686,27 @@ footer p {
 }
 
 .team-card {
-  padding: 40px 20px 30px;
+  padding: 20px 10px 30px;
   box-shadow: 0px 7px 10px #ccc;
   height: 100%;
 }
+
+.design-bg-right {
+  background-image: url('/Img/design-right.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  width: 100%;
+}
+
+.design-bg-left {
+  background-image: url('/Img/design-left.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  width: 100%;
+}
+
 .team-img {
   border-radius: 50%;
   width: 150px;
@@ -787,10 +819,10 @@ footer p {
 .contact-form {
   background: #fff;
   margin-bottom: 5%;
-  box-shadow: 0 7px 10px;
+  box-shadow: 0 -1px 10px;
   width: 100%;
-  margin-top: -50px;
   border-radius: 10px;
+  margin-top: 140px;
 }
 
 .contact-form .form-control {
@@ -1280,7 +1312,184 @@ footer p {
   outline: none;
 }
 
+.contact-phone {
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Butterfly */
+#butterfly {
+  position: absolute;
+  transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5);
+  -webkit-transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5);
+  transform-origin: 80% 50%;
+  -webkit-transform-origin: 80% 50%;
+  left: 0px;
+  top: 0px;
+  width: 70%;
+  height: 208px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  animation-name: butterflyani;
+  -webkit-animation-name: butterflyani;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  z-index: 1;
+}
+
+@keyframes butterflyani {
+  from {
+    -webkit-transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5)
+      translate3d(-300px, 350px, 0px);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 1, 0, -90deg) scale3d(0.5, 0.5, 0.5)
+      translate3d(-300px, 350px, 0px);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 1, 0, -180deg) scale3d(0.5, 0.5, 0.5)
+      translate3d(-300px, 350px, 0px);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 1, 0, -270deg) scale3d(0.5, 0.5, 0.5)
+      translate3d(-300px, 350px, 0px);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 1, 0, -360deg) scale3d(0.5, 0.5, 0.5)
+      translate3d(-300px, 350px, 0px);
+  }
+}
+
+#rightwing {
+  transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+  -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+  position: absolute;
+  left: 178px;
+  top: 0px;
+  width: 178px;
+  height: 208px;
+  background-image: url(http://www.eleqtriq.com/wp-content/static/demos/2010/css3d/img/wing.png);
+  background-repeat: no-repeat;
+  animation-name: rightwingani;
+  -webkit-animation-name: rightwingani;
+  animation-duration: 0.2s;
+  -webkit-animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes rightwingani {
+  from {
+    -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+  }
+  50% {
+    -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 100deg);
+  }
+  to {
+    -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+  }
+}
+
+#leftwing {
+  transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+  -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+  position: absolute;
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+  left: 0px;
+  top: 0px;
+  width: 178px;
+  height: 208px;
+  background-image: url(http://www.eleqtriq.com/wp-content/static/demos/2010/css3d/img/wing.png);
+  background-repeat: no-repeat;
+  animation-name: leftwingani;
+  -webkit-animation-name: leftwingani;
+  animation-duration: 0.2s;
+  -webkit-animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes leftwingani {
+  from {
+    -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 80deg);
+  }
+  to {
+    -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 00deg);
+  }
+}
+
+/* Baloons */
+#balloon-container {
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon:before {
+  content: '';
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #fdfd96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+  content: '▲';
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(25vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  .contact-form {
+    margin-top: 70px;
+  }
+
   /* Main Page */
   .pageHight {
     margin-top: 56px;

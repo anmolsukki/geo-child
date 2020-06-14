@@ -138,7 +138,7 @@ class Magazines extends React.Component {
                         value={this.state.address}
                         name="address"
                         onChange={this.getHelpFormHandler}
-                        label="Address"
+                        label="Residential Address"
                       />
                     </div>
                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
