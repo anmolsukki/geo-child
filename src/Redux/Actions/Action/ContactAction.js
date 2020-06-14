@@ -36,3 +36,36 @@ export const contactusAction = (data) => {
       });
   };
 };
+
+export const feedbackAction = (data) => {
+  let url = `${process.env.REACT_APP_BASE_URL}/feedback`;
+  return async (dispatch) => {
+    dispatch(actionTypes.FEEDBACK_INIT());
+    return axios
+      .post(url, data, { headers: await getHeaders(true) })
+      .then((res) => {
+        console.log(res, 'Feedback Submitted');
+        dispatch(actionTypes.FEEDBACK_SUCCESS(res.data));
+        if (res.status === 201) {
+          swal({
+            title: 'Success',
+            icon: 'success',
+            dangerMode: false,
+            button: 'OK',
+          }).then((result) => {
+            if (result) {
+              window.location.reload();
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error, 'Feedback Error');
+        dispatch(actionTypes.FEEDBACK_ERROR(error));
+        toast.success(error.response.data.message, {
+          autoClose: 1000,
+          transition: Flip,
+        });
+      });
+  };
+};

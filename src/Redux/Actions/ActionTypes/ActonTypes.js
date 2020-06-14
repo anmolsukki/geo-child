@@ -45,6 +45,13 @@ export const CONTACT_SUCCESS = (data) => ({
 });
 export const CONTACT_ERROR = (data) => ({ type: actionConstant.CONTACT_US_ERROR, data: data });
 
+export const FEEDBACK_INIT = () => ({ type: actionConstant.FEEDBACK_DATA_INIT });
+export const FEEDBACK_SUCCESS = (data) => ({
+  type: actionConstant.FEEDBACK_DATA_SUCCESS,
+  data: data,
+});
+export const FEEDBACK_ERROR = (data) => ({ type: actionConstant.FEEDBACK_DATA_ERROR, data: data });
+
 export const TEAM_INIT = () => ({ type: actionConstant.TEAM_DATA_INIT });
 export const TEAM_SUCCESS = (data) => ({
   type: actionConstant.TEAM_DATA_SUCCESS,

@@ -6,5 +6,5 @@ export {
   changePasswordAction,
 } from '../Action/AuthAction';
 export { AllMagaZineAction, myMagaZineAction } from '../Action/MagazineAction';
-export { contactusAction } from '../Action/ContactAction';
+export { contactusAction, feedbackAction } from '../Action/ContactAction';
 export { teamAction, noticesAction } from '../Action/TeamAction';

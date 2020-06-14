@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
 import * as actionCreator from '../../Redux/Actions/ActionTypes/index';
 import Footer from '../Footer/Footer';
@@ -27,6 +29,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
+        <ToastContainer limit={1} />
         <div className="banner about-img">
           <img src="img/contact.jpg" alt="" />
         </div>

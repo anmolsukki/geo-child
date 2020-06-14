@@ -47,7 +47,7 @@
 }
 
 .clr-padding {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .fadeInEffect {
@@ -841,91 +841,6 @@ footer p {
   color: #f26522;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* Main Page */
-  .pageHight {
-    margin-top: 56px;
-  }
-
-  /* Common Page */
-  .pageWidth {
-    width: unset;
-  }
-
-  .sliderCircle {
-    display: none;
-  }
-
-  .mainHeader {
-    margin-top: 15px;
-  }
-
-  .cardSpace {
-    margin-top: 0 !important;
-  }
-
-  .carousel-item img {
-    width: 100%;
-    height: 200px;
-  }
-
-  .itemMargin {
-    margin: 25px 0 !important;
-  }
-
-  .contact-form-manage {
-    margin-top: 45px;
-  }
-
-  .ribbon {
-    padding: unset;
-  }
-
-  .our_team {
-    margin-top: unset;
-  }
-
-  .title {
-    padding: unset;
-  }
-
-  .foote_bottom_ul_amrc {
-    text-align: center;
-  }
-
-  .foote_bottom_ul_amrc li {
-    display: inline-block;
-  }
-
-  .sectionView {
-    min-height: unset !important;
-  }
-
-  .mobMargin {
-    margin: 0 0 10px 0 !important;
-  }
-
-  .sectionContainer {
-    padding: 5px !important;
-  }
-
-  .formbody .form-body {
-    padding: 20px !important;
-  }
-
-  .bodyViewInputForm {
-    width: 100% !important;
-  }
-
-  .bodyView {
-    min-height: unset !important;
-  }
-
-  .bodyCardSpace {
-    margin-top: 10px !important;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .about-card {
     margin-top: 10px;
@@ -1159,7 +1074,7 @@ footer p {
 }
 
 .feedback-form-vertical {
-  width: 65%;
+  width: 70%;
   margin: auto;
 }
 
@@ -1228,10 +1143,11 @@ footer p {
   border: 1px solid #888888;
   transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
   width: 100%;
-  height: 55px;
+  height: 45px;
   font-family: 'Poppins-regular';
   text-transform: uppercase;
   line-height: 34px;
+  cursor: pointer;
 }
 
 .feedback-button-control:focus {
@@ -1343,6 +1259,7 @@ footer p {
 
 .textare-controls {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .form-textarea {
@@ -1361,4 +1278,122 @@ footer p {
 
 .form-textarea:focus {
   outline: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  /* Main Page */
+  .pageHight {
+    margin-top: 56px;
+  }
+
+  /* Common Page */
+  .pageWidth {
+    width: unset;
+  }
+
+  .sliderCircle {
+    display: none;
+  }
+
+  .mainHeader {
+    margin-top: 15px;
+  }
+
+  .cardSpace {
+    margin-top: 0 !important;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .itemMargin {
+    margin: 25px 0 !important;
+  }
+
+  .contact-form-manage {
+    margin-top: 45px;
+  }
+
+  .ribbon {
+    padding: unset;
+  }
+
+  .our_team {
+    margin-top: unset;
+  }
+
+  .title {
+    padding: unset;
+  }
+
+  .foote_bottom_ul_amrc {
+    text-align: center;
+  }
+
+  .foote_bottom_ul_amrc li {
+    display: inline-block;
+  }
+
+  .sectionView {
+    min-height: unset !important;
+  }
+
+  .mobMargin {
+    margin: 0 0 10px 0 !important;
+  }
+
+  .sectionContainer {
+    padding: 5px !important;
+  }
+
+  .formbody .form-body {
+    padding: 20px !important;
+  }
+
+  .bodyViewInputForm {
+    width: 100% !important;
+  }
+
+  .bodyView {
+    min-height: unset !important;
+  }
+
+  .bodyCardSpace {
+    margin-top: 10px !important;
+  }
+
+  .bgImageFeedback {
+    margin-top: -65px;
+  }
+
+  .feedback-form-vertical {
+    width: 85%;
+  }
+
+  .feedback-form-container {
+    padding: 15px;
+  }
+
+  .feedback-main-title {
+    font-size: 30px;
+    padding: 20px;
+  }
+
+  .feedback-checkbox {
+    height: 110px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .feedback-checkbox {
+    height: 70px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ratingHeight {
+    height: 70px;
+  }
 }
