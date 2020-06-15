@@ -41,14 +41,24 @@ const sideDrawer = (props) => {
           );
         })}
         {localStorage.getItem('token') ? (
-          <li>
-            <Link
-              to="#"
-              className={`${SideDrawerClass.navOption}`}
-              onClick={() => props.bacDrawer() && props.logout()}>
-              Logout
-            </Link>
-          </li>
+          <React.Fragment>
+            <li>
+              <Link
+                to="/profile"
+                className={`${SideDrawerClass.navOption}`}
+                onClick={() => props.bacDrawer()}>
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="#"
+                className={`${SideDrawerClass.navOption}`}
+                onClick={() => props.bacDrawer() && props.logout()}>
+                Logout
+              </Link>
+            </li>
+          </React.Fragment>
         ) : null}
       </ul>
     </nav>

@@ -12,7 +12,7 @@ const navbar = (props) => {
         </div>
         <div className={ToolbarClass.logo}>
           <Link to="/home">
-            <img src="img/logo.svg" alt="" />
+            <img src="img/logo.png" alt="" />
           </Link>
         </div>
         <div className={ToolbarClass.spacer} />

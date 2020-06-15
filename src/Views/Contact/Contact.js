@@ -63,7 +63,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="bgImageContact">
         <ToastContainer limit={1} />
         <div className="container">
           <div className="col-md-10 col-lg-9 mx-auto contact-form-manage">

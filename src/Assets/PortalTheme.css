@@ -1075,6 +1075,15 @@ footer p {
   min-height: 100vh;
 }
 
+.bgImageContact {
+  background-image: url(/img/contact-bg.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .feedback-form-container {
   background: rgba(111, 105, 137, 0.75);
   border-radius: 10px;
@@ -1486,6 +1495,15 @@ footer p {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  .bgImageContact {
+    background-image: url(/img/contact-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 100%;
+    min-height: 100vh;
+  }
+
   .contact-form {
     margin-top: 70px;
   }

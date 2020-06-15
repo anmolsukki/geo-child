@@ -57,16 +57,17 @@ class AboutPage extends React.Component {
                           <div className="tab-pane active">
                             <h4 className="card-title about-cardss">About Us</h4>
                             <p className="card-text about-descc">
-                              Geo Child is the world’s fastest growing, digital cross platform
+                              GeoChild is the world’s fastest growing, digital cross platform
                               magazine. Based in National Capital Region, we have an ambitious plan
                               to reach every school on this planet.
                             </p>
                             <p className="card-text about-descc">
-                              Our success story started in Dec. 2018 when Indian Council for
-                              Journalism and Juvenile Research (ICJJR) launched a print version of
-                              Geo Child. ‘Geo Child’ print boasts itself as India’s first magazine
-                              on child rights and psychology. It is now, India’s largest circulated
-                              and the most read publication.
+                              Our success story started in December 2018 when our parent
+                              organisation Indian Council for Journalism and Juvenile Research
+                              (ICJJR) launched a print version of GeoChild. ‘GeoChild’ print boasts
+                              itself as India’s first monthly magazine on child rights and
+                              psychology. It is now, India’s largest circulated and the most read
+                              publication.
                             </p>
                             <p className="card-text about-descc">
                               It is now time to take a big step ahead. We all know that we are in
@@ -88,7 +89,7 @@ class AboutPage extends React.Component {
                             <p className="card-text about-descc">
                               Although, we have primary focus on students, our magazine offers lot
                               of interesting and knowledgeable things for teachers, parents mentors
-                              and the teenagers too. At Geo Child digital, we are more engaging,
+                              and the teenagers too. At GeoChild digital, we are more engaging,
                               responsive and interactive. While subscribing for our content, you can
                               also make suggestions, submit your own content and participate in our
                               competitions.
@@ -104,15 +105,13 @@ class AboutPage extends React.Component {
                           </div>
                         ) : this.state.tab === 'hin' ? (
                           <div className="tab-pane active">
-                            <h4 className="card-title about-cardss">
-                              एक परिचय . . . GeoChild बारे में
-                            </h4>
+                            <h4 className="card-title about-cardss">एक परिचय . . .</h4>
                             <p className="card-text about-descc">
                               प्यारे बच्चों, हमारी “GeoChild” अब दुनिया की तेज़ी से बढ़ती हुई एक
                               डिजिटल प्लेटफ़ॉर्म मैगजीन है। यह भारत की पहली ऐसी पत्रिका हैं जो कि
                               बच्चों के अधिकारों और बाल मनोविज्ञान पर आधारित हैं। इस समय हमारे पास
-                              महत्वाकांक्षी योजना होने से हम हर एक स्कूल व बच्चे तक पहुंचने का
-                              प्रयास कर सकते हैं।
+                              महत्वाकांक्षी योजना होने से हम विश्व के हर एक स्कूल व बच्चे तक पहुंचने
+                              का प्रयास कर सकते हैं।
                             </p>
                             <p className="card-text about-descc">
                               दिसम्बर 2018 में भारतीय पत्रकारिता एवं किशोर अनुसन्धान परिषद् (Indian
@@ -150,10 +149,11 @@ class AboutPage extends React.Component {
                             </p>
                             <p className="card-text about-descc">
                               Feedback फार्म पर आप हमसे सीधे जुड़ सकते हैं या मेल के द्वारा भी हमसे
-                              संपर्क कर सकते हैं। हमारा मेल आईडी हैं: geochildweb@gmail.com
+                              संपर्क कर सकते हैं। हमारा ईमेल आईडी हैं:- geochildweb@gmail.com
                             </p>
                             <p className="desc-footer about-descc">
-                              प्यारे बच्चों जागरूक बनें, शिक्षित बनें, स्वस्थ रहें और सुरक्षित रहे!
+                              प्यारे बच्चों. . . जागरूक बनें, शिक्षित बनें, स्वस्थ रहें और सुरक्षित
+                              रहे!
                             </p>
                           </div>
                         ) : null}
