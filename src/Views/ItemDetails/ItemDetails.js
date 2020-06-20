@@ -51,7 +51,8 @@ class ItemDetails extends Component {
           orderID: result.data.order_id,
         });
         var options = {
-          key_id: 'rzp_test_DB15Tgu6YWUNcJ',
+          // key_id: 'rzp_test_DB15Tgu6YWUNcJ',
+          key_id: 'rzp_live_JeyG1qbHNCcXCS',
           amount: ammunt,
           currency: 'INR',
           name: 'Geochild',
