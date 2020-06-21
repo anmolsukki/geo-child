@@ -1,4 +1,5 @@
 import React from 'react';
+import Draggable from 'react-draggable';
 
 class ViewMagazine extends React.Component {
   state = {
@@ -71,12 +72,15 @@ class ViewMagazine extends React.Component {
               </div>
             </div>
           </div>
-          <div className="image-container dragscroll">
-            <img
-              id="map"
-              src={`${process.env.REACT_APP_URL}/magzines/${this.state.id}/${this.state.currentPage}.jpg`}
-              alt=""
-            />
+          <div className="image-container">
+            <Draggable axis="x">
+              <img
+                id="map"
+                draggable={false}
+                src={`${process.env.REACT_APP_URL}/magzines/${this.state.id}/${this.state.currentPage}.jpg`}
+                alt=""
+              />
+            </Draggable>
           </div>
         </div>
       </div>
